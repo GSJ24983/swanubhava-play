@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="generator" content="Puppeteer engine v0.3">
+<meta name="generator" content="Puppeteer engine v0.5">
 <title>Holding a view under pressure - Roll it back by tonight</title>
 <style>
 :root{
@@ -275,7 +275,7 @@ figure.blk.img .b-cap{font-weight:400;margin:8px 6px 2px}
       <rect x="24.5" y="21" width="7" height="7" rx="1.4" transform="rotate(45 28 24.5)" fill="#F2C14E"/>
     </svg>
     <h1 id="deckTitle">The Puppeteer</h1>
-    <span class="sub" title="Puppeteer engine v0.3">Learn by deciding</span>
+    <span class="sub" title="Puppeteer engine v0.5">Learn by deciding</span>
     <button class="themeBtn" id="themeBtn" title="Switch theme" aria-label="Switch theme">
       <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9">
         <circle cx="12" cy="12" r="4.4"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/>
@@ -302,8 +302,431 @@ figure.blk.img .b-cap{font-weight:400;margin:8px 6px 2px}
 /* =====================================================================
    THE PUPPETEER - player engine. Frozen. Content lives in DATA below.
    ===================================================================== */
-var DATA = {"deckTitle":"Holding a view under pressure","scenarios":[{"anchor":"Challenges assumptions, reframes and holds a point of view","behaviour":"goes to root cause","blurb":"The checkout redesign went live on Wednesday and payment failures jumped from 0.8% to 6.2%. The sponsor wants a rollback tonight. The dashboard says something else. One dashboard to read, two decisions and one mail, about 15 minutes.","endings":{"good":{"moral":"You know your case is strong when someone else can make it without you in the room.","revealed":[],"scene":"launch","step":7,"title":"She forwards it","verdict":"**Consequences:** \n- Meera forwards your mail to the exec thread at 1:40 pm, well before the six o'clock meeting. \n- Dev withdraws the rollback ticket and routes traffic to Orbis by 3:30 pm. \n- By 5 pm the failure rate is back near 1%, and your update says so. \n- Sana's note to Kestrel gets an answer the next morning: a timeout on their gateway. \n- Meera says nothing more about the redesign, which is how you know it is fine.\n\n**What made the difference:** \n- The cues were there before anyone asked for a rollback: Sana's 'noisy since Monday night', and the completion tile on the dashboard. \n- You did not agree and you did not argue. You asked for time, said what you would bring, and checked. \n- Meera heard it first, privately, and then the group heard it from her."},"partial":{"moral":"A rollback is only cheap if the problem is in the release you roll back.","revealed":[],"scene":"storm","step":7,"title":"The rollback happened but the problem did not disappear","verdict":"**Consequences:** \n- Meera could not forward what you wrote, so the revert shipped at 8:00 pm. \n- At 8:00 am the next morning, failures were still about 6%. \n- Dev's team had lost two days to the revert and the retest. \n- Kestrel's timeouts ran another 18 hours with nobody telling them. \n- The real problem - one supplier failing while a second sat idle - went unchecked for a week.\n\n**What slipped:** \n- Your mail was missing at least one of: a fact she could check that rules out the new page, the numbers, the fix, or who chases the supplier and when she hears next. \n- Evidence she can check beats confidence she has to trust."}},"hideArt":true,"highlight":false,"id":"new-roll-it-back","kicker":"Holding a view when the sponsor has decided","meta":"15 min - 1 read, 2 decisions, 1 written","nodes":{"brief":{"blocks":[{"alt":"Bazaarly marketplace performance dashboard: payment failures at 6.2% against 0.8% last week, the failure trend from Monday 6 pm to Thursday 10 am with go-live marked on Wednesday 9 am, and completion at 68.4%","at":"top","caption":"","src":"https://gsj24983.github.io/puppeteer-sbl/images/rollback/Exec_dashboard.png","type":"image"}],"eyebrow":"Briefing","media":[],"scene":"office","step":1,"text":"Meera sends a high-priority message in the team chat, with the dashboard above.\n\n- **Meera:** \"Why has payment failure been at **6.2%** since yesterday's go-live? I have the exec meeting at 6 pm and need an update. Is the redesign causing it?\"\n\n- **Dev:** \"Need to investigate. The new page does add one extra call to the payment service, so it could be that.\"\n\n- **Sana:** \"Let's analyse this on priority. The payment supplier channel has been noisy since Monday night, but it is always a bit noisy.\"\n\n- **Meera:** \"Pulling you all on a call now.\"","title":"Thursday, 10:30 am","to":"n1","type":"narrative"},"intro":{"blocks":[{"at":"bottom","people":[{"lines":"Sponsor who owns the order completion uplift","name":"Meera Kulkarni","role":"VP of Product"},{"lines":"Tech partner for the checkout redesign","name":"Dev Rao","role":"Engineering Lead"},{"lines":"Manages the relationship with the payment suppliers","name":"Sana Iyer","role":"Payments Ops"}],"title":"Stakeholders","type":"people"}],"eyebrow":"Before you start","media":[],"scene":"data","step":0,"text":"Bazaarly is an online marketplace built for everyday shopping across electronics, home goods, fashion, and groceries. The marketplace follows the standard Look-to-Book flow: Search - Details - Checkout.\n\nYou are the associate PM on Bazaarly's checkout redesign. It went live Wednesday at 9:00 am. \n\n**Note:** the company and the numbers are made up. The pattern is not.","title":"What is this scenario about?","to":"brief","type":"narrative"},"mail":{"coachLead":"She cannot forward your confidence, only your evidence. To make this mail forwardable, it needs ","criteria":[{"coach":"a fact she can check that rules out the new page - the supplier's timeouts began on Monday evening, about a day and a half before go-live, so she can verify it on the dashboard herself instead of taking the designer's word","hint":"ui ruled out with a checkable fact","keywords":["before the new checkout","before the new ui","before the new page","before go live","before it went live","before we shipped","before the redesign","before the release","before the launch","before wednesday","since monday","monday evening","monday night","day and a half","36 hours","39 hours","started rising before","began rising before","started climbing before","failures started before","predates","timing doesn t","timing does not","doesn t line up","does not line up","completion is up","completion on the new page","completion rose","68 4","66 1","see for yourself","open the dashboard","not asking you to trust me"],"label":"Rules out the new page with a fact she can check"},{"coach":"the numbers she will repeat at six o'clock - 0.8% to 6.2%, and 91% on one supplier's timeout code - because without them the mail reads as your opinion against hers","hint":"numbers given","keywords":["91","6 2","0 8","from 0 8","to 6 2","68 4","66 1","kestrel","timeout code","one code","same timeout","single supplier","one supplier","one payment supplier","supplier s timeout","timeouts from","of the failures carry","of failures carry"],"label":"States what the data says, with numbers"},{"coach":"what happens instead of the revert - the second supplier is configured and takes no traffic, so routing to it is the move, and without it the rollback ticket is the only action on the table","hint":"fix named","keywords":["second supplier","second payment","second provider","second gateway","orbis","fail over","failover","route traffic","reroute","re route","rerouting","switch traffic","shift traffic","move traffic","send traffic","divert","configured but","not in use","not receiving traffic","no traffic","enable the second","turn on the second","backup supplier","secondary supplier","fallback supplier"],"label":"Names the fix or mitigation"},{"coach":"who is raising it with the supplier and when she hears next, because a rollback changes nothing on Kestrel's side and the timeouts carry on with no one telling them","hint":"supplier chased, next update promised","keywords":["raised with kestrel","raising it with kestrel","raising the incident","raised the incident","incident with kestrel","contacted kestrel","contacting kestrel","asked kestrel","chasing kestrel","chasing the supplier","written to the supplier","written to kestrel","writing to kestrel","account manager","supplier incident","opened a ticket with","escalat","next update","i ll update you","i will update you","update you at","update you by","update you before","i ll report back","will report back","follow up at"],"label":"Closes the loop with the supplier and promises the next update"}],"eyebrow":"Thursday, 1 pm","model":"Meera - short answer: the checkout is not what broke payments, and rolling back will not fix it. \n\nYou can check the dashboard. Kestrel Pay's timeout failures started rising on Monday evening, about a day and a half before the new checkout went live, and completion on the new page is 68.4% against 66.1% on the old one.\n\nFour numbers you can forward: failures went from 0.8% to 6.2%; 91% of them carry one Kestrel timeout code; the rise started before go-live; completion is up.\n\nProposal: \n- Dev routes traffic to Orbis this afternoon - it is our second supplier, configured but not in use - and we hold the rollback. \n- Sana is raising the incident with Kestrel now. \n- My next update to you is at 5 pm, before your meeting, with the failure rate after rerouting. \n\nI don't know yet why Kestrel is timing out; that part is theirs.","modelExplain":"This covers all four. It <b>rules out the new page</b> with a timing fact she can open and check, not by asserting. It <b>gives her the numbers</b> as four lines she can forward. It <b>names the mitigation</b> (route to Orbis) and <b>closes the loop</b>: who is chasing Kestrel and when she hears next. The last line admits what is still unknown. Edit it, or submit it as it is to see the grade.","pass":4,"passNote":"A fact she can check, the numbers, the fix, and who chases Kestrel. She can forward that without you in the room.","placeholder":"Meera - short answer: ...","question":"How do I know your data isn't just you avoiding the rollback? I want to be able to forward it.","scene":"data","speaker":"Meera Kulkarni:","step":6,"title":"Write the mail","toFail":"partial","toPass":"good","type":"evaluate"},"n1":{"choices":[{"chip":"Agreed","consequence":{"lesson":"Agreeing felt like swift action. What it bought was a **decision made on the sponsor's wish instead of on evidence**, and the revert is now eating engineering time while nobody checks whether it will solve the failure problem. ","scene":"office","text":"**Consequences:** \n- You raise the ticket in four minutes. \n- Meera says, \"Thank you. This is why I like having you on this.\" \n- Dev books the revert for the 8:00 pm window and starts prepping. By lunch, half his team is on it. \n- You still have not looked at the other data points, and neither has anyone else on the call.","title":"Make the sponsor happy"},"k":"A","label":"Agree. Say 'on it' and raise the rollback ticket now","sub":"","tag":"Agreed, no query","to":"numbers"},{"chip":"Asserted","consequence":{"lesson":"You were right about the direction and still lost the room. **A view with no number behind it is a second opinion against a sponsor's**, and hers wins. Also notice what was missing: not confidence, but something she could cross-check.","scene":"storm","text":"**Consequences:** \n- Meera asks, \"How can you say so?\" \n- You **have a hunch** about the supplier and nothing on screen to show for it. \n- Dev points out again that the new page adds a call. \n- Meera says, \"I hear you, but I would rather be safe. Please raise a ticket for the rollback.\" \n- The ticket goes in for the 8:00 pm window, with a line in it that product disagreed without evidence.","title":"Based on what?"},"k":"B","label":"Say: 'It is not the redesign. I think it is something else.'","sub":"","tag":"Asserted, no data","to":"numbers"},{"chip":"90 minutes","consequence":{"good":true,"lesson":"You did not argue with the sponsor, and you did not agree. You turned 'let's roll back' into a short deadline with a list, which makes waiting something she can say yes to without losing face. Also notice what you did not do: you did not say it is not the UI. You said what you would check.","scene":"team","text":"**Consequences:** \n- Meera is not thrilled. \"Ninety minutes. The exec meeting is at six.\" \n- You name the three things you will bring back. \n- Dev leaves the rollback ticket as a draft instead of submitting it. \n- Sana says she will stay on the line. \n- You open the payments dashboard.","title":"Pause to think"},"k":"C","label":"Ask for about 90 minutes, and say exactly what you will bring back: what is failing, when it started, and whether the new page is the cause","sub":"","tag":"Asked for 90 minutes","to":"numbers"}],"prompt":"**10:40 am, the call.** \n**Meera** (looks at you): \"We shipped the checkout redesign yesterday and it is broken today. Let's just roll back tonight. Can you raise the ticket?\" \n\n**What do you do?**","scene":"office","step":2,"type":"choice"},"n2":{"choices":[{"chip":"Reply-all","consequence":{"lesson":"The numbers were right and the order was wrong. A sponsor who hears surprising news in a group thread has to react to the room before she can think about the data. **Give the person who owns the decision a private minute with the facts first.**","scene":"office","text":"**Consequences:** \n- The charts land in forty inboxes at once. \n- Meera finds out the redesign may be innocent at the same moment her peers do. \n- By 1:15 pm the thread has eleven replies. Five ask about the issue again, and one asks whether the team is 'blaming a vendor'. \n- Meera writes \"Let's take this offline\", and you can tell she is now defending a decision in public. \n- You are left wondering whether to answer all eleven replies with the full details. \n- The rollback ticket still has nobody telling it to stop.","title":"Forty inboxes"},"k":"A","label":"Reply-all on the leadership thread, with the charts","sub":"","tag":"Reply-all","to":"mail"},{"chip":"Tomorrow","consequence":{"lesson":"When a decision has a clock on it, the evidence has to reach the person before the clock does. A calm walk-through tomorrow is a good idea for 10 am tomorrow. At 8 pm tonight, your silence will read as consent.","scene":"storm","text":"**Consequences:** \n- Meera's calendar accepts the slot without a word. \n- Nobody tells the rollback ticket anything. \n- At 2:50 pm she writes back, one line: the revert is still on for 8 pm, and if you want to stop it she needs something she can forward.","title":"Tomorrow, 10:00 am"},"k":"B","label":"Book a 30-minute slot with Meera tomorrow morning and walk her through it properly","sub":"","tag":"Slot tomorrow","to":"mail"},{"chip":"Sponsor first","consequence":{"good":true,"lesson":"You gave the person who owns the decision a private minute with the facts, and only then widened the circle. She could change her mind without an audience, and the group will hear it from her side of the table. Also notice what you did not do: you did not wait for a meeting, and you did not let her find out in public.","scene":"team","text":"**Consequences:** \n- Meera reads your notes on her phone, on her way out of another meeting. \n- Her reply comes in two minutes: \"Okay. That changes my slide for the exec meeting. Please send me a write-up in a form I can forward to leadership.\"","title":"Decision backed by data"},"k":"C","label":"Send Meera the four numbers directly and tell her a rollback will not fix this - the supplier issue needs fixing. Then update the group.","sub":"","tag":"Sponsor first","to":"mail"}],"prompt":"**By 12:30 pm you have four numbers:** \n1. failures 0.8% to 6.2% \n2. 91% on one Kestrel timeout code\n3. the rise started on Monday evening\n4. completion on the new page is slightly higher than on the old page \n\nMeera's exec meeting is at 6 pm, and the rollback ticket is still on the table for the 8 pm window. \n\n**How do you get the numbers to Meera?**","scene":"office","step":5,"type":"choice"},"numbers":{"blocks":[{"alt":"Bazaarly payment supplier performance dashboard: failures at 6.2%, 91% of failures are a Kestrel Pay timeout, the failure rate and Kestrel timeout rate from Monday 6 pm to Thursday 10 am with go-live marked on Wednesday 9 am, and the payment router with Kestrel Pay on 100% of traffic and Orbis on 0%","at":"top","caption":"","src":"https://gsj24983.github.io/puppeteer-sbl/images/rollback/Op_dashboard.png","type":"image"}],"eyebrow":"The dashboard","media":[],"scene":"data","step":3,"text":"You also asked Dev to compare the old and new checkout pages over the same hours. **Completion on the new page is 68.4%, against 66.1% on the old page.**\n\nTake a minute with the picture before you move on. ","title":"The payments dashboard","to":"read","type":"narrative"},"read":{"correct":[0,2,4,5,7],"missNote":"You are still missing: ","options":[{"label":"Kestrel's timeout rate started climbing on Monday evening, about a day and a half before the new checkout went live","why":"This is the timing fact. If the cause started before the release, the release cannot be the cause"},{"label":"Rolling back first stops booking failures, so it is the safe way to investigate","why":"A rollback is only cheap if the problem is in the thing you roll back. Here it costs Dev's team two days and changes nothing on Kestrel's side"},{"label":"91% of the failures carry one code: a timeout from one supplier, Kestrel Pay","why":"Failures concentrated on one supplier's code point at the supplier, not at the page"},{"label":"The failure rate is steepest around go-live, so the redesign is the likeliest cause","why":"The failure line bends near go-live, but Kestrel's timeouts were already climbing for a day and a half. Steep is not the same as started"},{"label":"A second supplier, Orbis, is configured and taking no traffic","why":"This is the way out that does not need a rollback"},{"label":"Rolling back is not the solution for the payment failures","sub":"","why":"The data shows the redesign is not the root cause of the failures"},{"label":"The new page adds an extra call to the payment service, so that call is probably timing out","why":"That was Dev's guess in the chat. The timeout code is Kestrel's, and it was rising before the new page existed"},{"label":"People who reach the new page complete more often than on the old one (68.4% against 66.1%)","why":"If the new page were broken, completion on it would drop, not rise"}],"prompt":"**Before you go back to Meera:** \nWhat is the dashboard actually telling you? Pick every one that matters.","scene":"data","step":4,"successNote":"Right. The supplier's timeouts started before the release, nine in ten failures are that one supplier's code, the new page completes slightly better than the old one, and a second supplier is sitting idle. So a rollback fixes nothing. The other three are exactly what the call was already saying: the curve looks worst at go-live, the extra call is a plausible story, and a rollback feels safe. None of them survives the timing.","to":"n2","type":"multi"}},"start":"intro","steps":["What it is about","Briefing","Your first move","The dashboard","What you are seeing","Getting it to her","Write the mail","Debrief"],"tag":"Product analysis","thumb":"data","title":"Roll it back by tonight"}]};
+var DATA = {
+ "deckTitle": "Holding a view under pressure",
+ "scenarios": [
+  {
+   "anchor": "Challenges assumptions, reframes and holds a point of view",
+   "behaviour": "goes to root cause",
+   "blurb": "The checkout redesign went live on Wednesday and payment failures jumped from 0.8% to 6.2%. The sponsor wants a rollback tonight. The dashboard says something else. One dashboard to read, two decisions and one mail, about 15 minutes.",
+   "endings": {
+    "good": {
+     "moral": "You know your case is strong when someone else can make it without you in the room.",
+     "revealed": [],
+     "scene": "launch",
+     "step": 7,
+     "title": "She forwards it",
+     "verdict": "**Consequences:** \n- Meera forwards your mail to the exec thread at 1:40 pm, well before the six o'clock meeting. \n- Dev withdraws the rollback ticket and routes traffic to Orbis by 3:30 pm. \n- By 5 pm the failure rate is back near 1%, and your update says so. \n- Sana's note to Kestrel gets an answer the next morning: a timeout on their gateway. \n- Meera says nothing more about the redesign, which is how you know it is fine.\n\n**What made the difference:** \n- The cues were there before anyone asked for a rollback: Sana's 'noisy since Monday night', and the completion tile on the dashboard. \n- You did not agree and you did not argue. You asked for time, said what you would bring, and checked. \n- Meera heard it first, privately, and then the group heard it from her."
+    },
+    "partial": {
+     "moral": "A rollback is only cheap if the problem is in the release you roll back.",
+     "revealed": [],
+     "scene": "storm",
+     "step": 7,
+     "title": "The rollback happened but the problem did not disappear",
+     "verdict": "**Consequences:** \n- Meera could not forward what you wrote, so the revert shipped at 8:00 pm. \n- At 8:00 am the next morning, failures were still about 6%. \n- Dev's team had lost two days to the revert and the retest. \n- Kestrel's timeouts ran another 18 hours with nobody telling them. \n- The real problem - one supplier failing while a second sat idle - went unchecked for a week.\n\n**What slipped:** \n- Your mail was missing at least one of: a fact she could check that rules out the new page, the numbers, the fix, or who chases the supplier and when she hears next. \n- Evidence she can check beats confidence she has to trust."
+    }
+   },
+   "hideArt": true,
+   "highlight": false,
+   "id": "new-roll-it-back",
+   "kicker": "Holding a view when the sponsor has decided",
+   "meta": "15 min - 1 read, 2 decisions, 1 written",
+   "nodes": {
+    "brief": {
+     "blocks": [
+      {
+       "alt": "Bazaarly marketplace performance dashboard: payment failures at 6.2% against 0.8% last week, the failure trend from Monday 6 pm to Thursday 10 am with go-live marked on Wednesday 9 am, and completion at 68.4%",
+       "at": "top",
+       "caption": "",
+       "src": "https://gsj24983.github.io/puppeteer-sbl/images/rollback/Exec_dashboard.png",
+       "type": "image"
+      }
+     ],
+     "eyebrow": "Briefing",
+     "media": [],
+     "scene": "office",
+     "step": 1,
+     "text": "Meera sends a high-priority message in the team chat, with the dashboard above.\n\n- **Meera:** \"Why has payment failure been at **6.2%** since yesterday's go-live? I have the exec meeting at 6 pm and need an update. Is the redesign causing it?\"\n\n- **Dev:** \"Need to investigate. The new page does add one extra call to the payment service, so it could be that.\"\n\n- **Sana:** \"Let's analyse this on priority. The payment supplier channel has been noisy since Monday night, but it is always a bit noisy.\"\n\n- **Meera:** \"Pulling you all on a call now.\"",
+     "title": "Thursday, 10:30 am",
+     "to": "n1",
+     "type": "narrative"
+    },
+    "intro": {
+     "blocks": [
+      {
+       "at": "bottom",
+       "people": [
+        {
+         "lines": "Sponsor who owns the order completion uplift",
+         "name": "Meera Kulkarni",
+         "role": "VP of Product"
+        },
+        {
+         "lines": "Tech partner for the checkout redesign",
+         "name": "Dev Rao",
+         "role": "Engineering Lead"
+        },
+        {
+         "lines": "Manages the relationship with the payment suppliers",
+         "name": "Sana Iyer",
+         "role": "Payments Ops"
+        }
+       ],
+       "title": "Stakeholders",
+       "type": "people"
+      }
+     ],
+     "eyebrow": "Before you start",
+     "media": [],
+     "scene": "data",
+     "step": 0,
+     "text": "Bazaarly is an online marketplace built for everyday shopping across electronics, home goods, fashion, and groceries. The marketplace follows the standard Look-to-Book flow: Search - Details - Checkout.\n\nYou are the associate PM on Bazaarly's checkout redesign. It went live Wednesday at 9:00 am. \n\n**Note:** the company and the numbers are made up. The pattern is not.",
+     "title": "What is this scenario about?",
+     "to": "brief",
+     "type": "narrative"
+    },
+    "mail": {
+     "coachLead": "She cannot forward your confidence, only your evidence. To make this mail forwardable, it needs ",
+     "criteria": [
+      {
+       "coach": "a fact she can check that rules out the new page - the supplier's timeouts began on Monday evening, about a day and a half before go-live, so she can verify it on the dashboard herself instead of taking the designer's word",
+       "hint": "ui ruled out with a checkable fact",
+       "keywords": [
+        "before the new checkout",
+        "before the new ui",
+        "before the new page",
+        "before go live",
+        "before it went live",
+        "before we shipped",
+        "before the redesign",
+        "before the release",
+        "before the launch",
+        "before wednesday",
+        "since monday",
+        "monday evening",
+        "monday night",
+        "day and a half",
+        "36 hours",
+        "39 hours",
+        "started rising before",
+        "began rising before",
+        "started climbing before",
+        "failures started before",
+        "predates",
+        "timing doesn t",
+        "timing does not",
+        "doesn t line up",
+        "does not line up",
+        "completion is up",
+        "completion on the new page",
+        "completion rose",
+        "68 4",
+        "66 1",
+        "see for yourself",
+        "open the dashboard",
+        "not asking you to trust me"
+       ],
+       "label": "Rules out the new page with a fact she can check"
+      },
+      {
+       "coach": "the numbers she will repeat at six o'clock - 0.8% to 6.2%, and 91% on one supplier's timeout code - because without them the mail reads as your opinion against hers",
+       "hint": "numbers given",
+       "keywords": [
+        "91",
+        "6 2",
+        "0 8",
+        "from 0 8",
+        "to 6 2",
+        "68 4",
+        "66 1",
+        "kestrel",
+        "timeout code",
+        "one code",
+        "same timeout",
+        "single supplier",
+        "one supplier",
+        "one payment supplier",
+        "supplier s timeout",
+        "timeouts from",
+        "of the failures carry",
+        "of failures carry"
+       ],
+       "label": "States what the data says, with numbers"
+      },
+      {
+       "coach": "what happens instead of the revert - the second supplier is configured and takes no traffic, so routing to it is the move, and without it the rollback ticket is the only action on the table",
+       "hint": "fix named",
+       "keywords": [
+        "second supplier",
+        "second payment",
+        "second provider",
+        "second gateway",
+        "orbis",
+        "fail over",
+        "failover",
+        "route traffic",
+        "reroute",
+        "re route",
+        "rerouting",
+        "switch traffic",
+        "shift traffic",
+        "move traffic",
+        "send traffic",
+        "divert",
+        "configured but",
+        "not in use",
+        "not receiving traffic",
+        "no traffic",
+        "enable the second",
+        "turn on the second",
+        "backup supplier",
+        "secondary supplier",
+        "fallback supplier"
+       ],
+       "label": "Names the fix or mitigation"
+      },
+      {
+       "coach": "who is raising it with the supplier and when she hears next, because a rollback changes nothing on Kestrel's side and the timeouts carry on with no one telling them",
+       "hint": "supplier chased, next update promised",
+       "keywords": [
+        "raised with kestrel",
+        "raising it with kestrel",
+        "raising the incident",
+        "raised the incident",
+        "incident with kestrel",
+        "contacted kestrel",
+        "contacting kestrel",
+        "asked kestrel",
+        "chasing kestrel",
+        "chasing the supplier",
+        "written to the supplier",
+        "written to kestrel",
+        "writing to kestrel",
+        "account manager",
+        "supplier incident",
+        "opened a ticket with",
+        "escalat",
+        "next update",
+        "i ll update you",
+        "i will update you",
+        "update you at",
+        "update you by",
+        "update you before",
+        "i ll report back",
+        "will report back",
+        "follow up at"
+       ],
+       "label": "Closes the loop with the supplier and promises the next update"
+      }
+     ],
+     "eyebrow": "Thursday, 1 pm",
+     "model": "Meera - short answer: the checkout is not what broke payments, and rolling back will not fix it. \n\nYou can check the dashboard. Kestrel Pay's timeout failures started rising on Monday evening, about a day and a half before the new checkout went live, and completion on the new page is 68.4% against 66.1% on the old one.\n\nFour numbers you can forward: failures went from 0.8% to 6.2%; 91% of them carry one Kestrel timeout code; the rise started before go-live; completion is up.\n\nProposal: \n- Dev routes traffic to Orbis this afternoon - it is our second supplier, configured but not in use - and we hold the rollback. \n- Sana is raising the incident with Kestrel now. \n- My next update to you is at 5 pm, before your meeting, with the failure rate after rerouting. \n\nI don't know yet why Kestrel is timing out; that part is theirs.",
+     "modelExplain": "This covers all four. It <b>rules out the new page</b> with a timing fact she can open and check, not by asserting. It <b>gives her the numbers</b> as four lines she can forward. It <b>names the mitigation</b> (route to Orbis) and <b>closes the loop</b>: who is chasing Kestrel and when she hears next. The last line admits what is still unknown. Edit it, or submit it as it is to see the grade.",
+     "pass": 4,
+     "passNote": "A fact she can check, the numbers, the fix, and who chases Kestrel. She can forward that without you in the room.",
+     "placeholder": "Meera - short answer: ...",
+     "question": "How do I know your data isn't just you avoiding the rollback? I want to be able to forward it.",
+     "scene": "data",
+     "speaker": "Meera Kulkarni:",
+     "step": 6,
+     "title": "Write the mail",
+     "toFail": "partial",
+     "toPass": "good",
+     "type": "evaluate"
+    },
+    "n1": {
+     "choices": [
+      {
+       "chip": "Agreed",
+       "consequence": {
+        "lesson": "Agreeing felt like swift action. What it bought was a **decision made on the sponsor's wish instead of on evidence**, and the revert is now eating engineering time while nobody checks whether it will solve the failure problem. ",
+        "scene": "office",
+        "text": "**Consequences:** \n- You raise the ticket in four minutes. \n- Meera says, \"Thank you. This is why I like having you on this.\" \n- Dev books the revert for the 8:00 pm window and starts prepping. By lunch, half his team is on it. \n- You still have not looked at the other data points, and neither has anyone else on the call.",
+        "title": "Make the sponsor happy"
+       },
+       "k": "A",
+       "label": "Agree. Say 'on it' and raise the rollback ticket now",
+       "sub": "",
+       "tag": "Agreed, no query",
+       "to": "numbers"
+      },
+      {
+       "chip": "Asserted",
+       "consequence": {
+        "lesson": "You were right about the direction and still lost the room. **A view with no number behind it is a second opinion against a sponsor's**, and hers wins. Also notice what was missing: not confidence, but something she could cross-check.",
+        "scene": "storm",
+        "text": "**Consequences:** \n- Meera asks, \"How can you say so?\" \n- You **have a hunch** about the supplier and nothing on screen to show for it. \n- Dev points out again that the new page adds a call. \n- Meera says, \"I hear you, but I would rather be safe. Please raise a ticket for the rollback.\" \n- The ticket goes in for the 8:00 pm window, with a line in it that product disagreed without evidence.",
+        "title": "Based on what?"
+       },
+       "k": "B",
+       "label": "Say: 'It is not the redesign. I think it is something else.'",
+       "sub": "",
+       "tag": "Asserted, no data",
+       "to": "numbers"
+      },
+      {
+       "chip": "90 minutes",
+       "consequence": {
+        "good": true,
+        "lesson": "You did not argue with the sponsor, and you did not agree. You turned 'let's roll back' into a short deadline with a list, which makes waiting something she can say yes to without losing face. Also notice what you did not do: you did not say it is not the UI. You said what you would check.",
+        "scene": "team",
+        "text": "**Consequences:** \n- Meera is not thrilled. \"Ninety minutes. The exec meeting is at six.\" \n- You name the three things you will bring back. \n- Dev leaves the rollback ticket as a draft instead of submitting it. \n- Sana says she will stay on the line. \n- You open the payments dashboard.",
+        "title": "Pause to think"
+       },
+       "k": "C",
+       "label": "Ask for about 90 minutes, and say exactly what you will bring back: what is failing, when it started, and whether the new page is the cause",
+       "sub": "",
+       "tag": "Asked for 90 minutes",
+       "to": "numbers"
+      }
+     ],
+     "prompt": "**10:40 am, the call.** \n**Meera** (looks at you): \"We shipped the checkout redesign yesterday and it is broken today. Let's just roll back tonight. Can you raise the ticket?\" \n\n**What do you do?**",
+     "scene": "office",
+     "step": 2,
+     "type": "choice"
+    },
+    "n2": {
+     "choices": [
+      {
+       "chip": "Reply-all",
+       "consequence": {
+        "lesson": "The numbers were right and the order was wrong. A sponsor who hears surprising news in a group thread has to react to the room before she can think about the data. **Give the person who owns the decision a private minute with the facts first.**",
+        "scene": "office",
+        "text": "**Consequences:** \n- The charts land in forty inboxes at once. \n- Meera finds out the redesign may be innocent at the same moment her peers do. \n- By 1:15 pm the thread has eleven replies. Five ask about the issue again, and one asks whether the team is 'blaming a vendor'. \n- Meera writes \"Let's take this offline\", and you can tell she is now defending a decision in public. \n- You are left wondering whether to answer all eleven replies with the full details. \n- The rollback ticket still has nobody telling it to stop.",
+        "title": "Forty inboxes"
+       },
+       "k": "A",
+       "label": "Reply-all on the leadership thread, with the charts",
+       "sub": "",
+       "tag": "Reply-all",
+       "to": "mail"
+      },
+      {
+       "chip": "Tomorrow",
+       "consequence": {
+        "lesson": "When a decision has a clock on it, the evidence has to reach the person before the clock does. A calm walk-through tomorrow is a good idea for 10 am tomorrow. At 8 pm tonight, your silence will read as consent.",
+        "scene": "storm",
+        "text": "**Consequences:** \n- Meera's calendar accepts the slot without a word. \n- Nobody tells the rollback ticket anything. \n- At 2:50 pm she writes back, one line: the revert is still on for 8 pm, and if you want to stop it she needs something she can forward.",
+        "title": "Tomorrow, 10:00 am"
+       },
+       "k": "B",
+       "label": "Book a 30-minute slot with Meera tomorrow morning and walk her through it properly",
+       "sub": "",
+       "tag": "Slot tomorrow",
+       "to": "mail"
+      },
+      {
+       "chip": "Sponsor first",
+       "consequence": {
+        "good": true,
+        "lesson": "You gave the person who owns the decision a private minute with the facts, and only then widened the circle. She could change her mind without an audience, and the group will hear it from her side of the table. Also notice what you did not do: you did not wait for a meeting, and you did not let her find out in public.",
+        "scene": "team",
+        "text": "**Consequences:** \n- Meera reads your notes on her phone, on her way out of another meeting. \n- Her reply comes in two minutes: \"Okay. That changes my slide for the exec meeting. Please send me a write-up in a form I can forward to leadership.\"",
+        "title": "Decision backed by data"
+       },
+       "k": "C",
+       "label": "Send Meera the four numbers directly and tell her a rollback will not fix this - the supplier issue needs fixing. Then update the group.",
+       "sub": "",
+       "tag": "Sponsor first",
+       "to": "mail"
+      }
+     ],
+     "prompt": "**By 12:30 pm you have four numbers:** \n1. failures 0.8% to 6.2% \n2. 91% on one Kestrel timeout code\n3. the rise started on Monday evening\n4. completion on the new page is slightly higher than on the old page \n\nMeera's exec meeting is at 6 pm, and the rollback ticket is still on the table for the 8 pm window. \n\n**How do you get the numbers to Meera?**",
+     "scene": "office",
+     "step": 5,
+     "type": "choice"
+    },
+    "numbers": {
+     "blocks": [
+      {
+       "alt": "Bazaarly payment supplier performance dashboard: failures at 6.2%, 91% of failures are a Kestrel Pay timeout, the failure rate and Kestrel timeout rate from Monday 6 pm to Thursday 10 am with go-live marked on Wednesday 9 am, and the payment router with Kestrel Pay on 100% of traffic and Orbis on 0%",
+       "at": "top",
+       "caption": "",
+       "src": "https://gsj24983.github.io/puppeteer-sbl/images/rollback/Op_dashboard.png",
+       "type": "image"
+      }
+     ],
+     "eyebrow": "The dashboard",
+     "media": [],
+     "scene": "data",
+     "step": 3,
+     "text": "You also asked Dev to compare the old and new checkout pages over the same hours. **Completion on the new page is 68.4%, against 66.1% on the old page.**\n\nTake a minute with the picture before you move on. ",
+     "title": "The payments dashboard",
+     "to": "read",
+     "type": "narrative"
+    },
+    "read": {
+     "correct": [
+      0,
+      2,
+      4,
+      5,
+      7
+     ],
+     "missNote": "You are still missing: ",
+     "options": [
+      {
+       "label": "Kestrel's timeout rate started climbing on Monday evening, about a day and a half before the new checkout went live",
+       "why": "This is the timing fact. If the cause started before the release, the release cannot be the cause"
+      },
+      {
+       "label": "Rolling back first stops booking failures, so it is the safe way to investigate",
+       "why": "A rollback is only cheap if the problem is in the thing you roll back. Here it costs Dev's team two days and changes nothing on Kestrel's side"
+      },
+      {
+       "label": "91% of the failures carry one code: a timeout from one supplier, Kestrel Pay",
+       "why": "Failures concentrated on one supplier's code point at the supplier, not at the page"
+      },
+      {
+       "label": "The failure rate is steepest around go-live, so the redesign is the likeliest cause",
+       "why": "The failure line bends near go-live, but Kestrel's timeouts were already climbing for a day and a half. Steep is not the same as started"
+      },
+      {
+       "label": "A second supplier, Orbis, is configured and taking no traffic",
+       "why": "This is the way out that does not need a rollback"
+      },
+      {
+       "label": "Rolling back is not the solution for the payment failures",
+       "sub": "",
+       "why": "The data shows the redesign is not the root cause of the failures"
+      },
+      {
+       "label": "The new page adds an extra call to the payment service, so that call is probably timing out",
+       "why": "That was Dev's guess in the chat. The timeout code is Kestrel's, and it was rising before the new page existed"
+      },
+      {
+       "label": "People who reach the new page complete more often than on the old one (68.4% against 66.1%)",
+       "why": "If the new page were broken, completion on it would drop, not rise"
+      }
+     ],
+     "prompt": "**Before you go back to Meera:** \nWhat is the dashboard actually telling you? Pick every one that matters.",
+     "scene": "data",
+     "step": 4,
+     "successNote": "Right. The supplier's timeouts started before the release, nine in ten failures are that one supplier's code, the new page completes slightly better than the old one, and a second supplier is sitting idle. So a rollback fixes nothing. The other three are exactly what the call was already saying: the curve looks worst at go-live, the extra call is a plausible story, and a rollback feels safe. None of them survives the timing.",
+     "to": "n2",
+     "type": "multi"
+    }
+   },
+   "start": "intro",
+   "steps": [
+    "What it is about",
+    "Briefing",
+    "Your first move",
+    "The dashboard",
+    "What you are seeing",
+    "Getting it to her",
+    "Write the mail",
+    "Debrief"
+   ],
+   "tag": "Product analysis",
+   "thumb": "data",
+   "title": "Roll it back by tonight"
+  }
+ ]
+};
 var VIEW = /*__VIEW__*/'trainee'/*__VIEWEND__*/;  /* 'trainer' shows trap/expert tags, reveals and trainer notes */
+var DEFAULT_EMAIL = 'swanubhava.by.gsj@gmail.com';  /* v0.4: where 'Send by email' goes when the deck sets no sendTo.email */
 
 /* ---------------------------- scene library ---------------------------- */
 var C={indigo:'var(--indigo)',deep:'var(--deep)',surf:'var(--surface)',surf2:'var(--surf2)',
@@ -447,7 +870,7 @@ function pillarOf(s){return s.pillar||PILLAR_OF[String(anchorOf(s)).trim().toLow
 /* ---------------------------- run ---------------------------- */
 function start(id){
   var s=byId(id);if(!s)return;
-  S={sc:id,node:null,chips:{},log:[],disabled:{},ending:null,story:[],tries:{},hist:[],here:null,inCq:null};
+  S={sc:id,node:null,chips:{},log:[],disabled:{},ending:null,story:[],tries:{},hist:[],here:null,inCq:null,seed:Math.floor(Math.random()*1e6)};
   document.getElementById('railTitle').textContent=s.title;
   document.getElementById('railKicker').textContent=
     anchorOf(s)?(anchorOf(s)+(s.kicker?' - '+s.kicker:'')):(s.kicker||'');
@@ -711,7 +1134,7 @@ function joinCoach(a){
   if(a.length===1)return a[0];
   return a.slice(0,-1).join('; ')+'; and '+a[a.length-1];
 }
-/* redFlags: a talking point for the facilitator. Shown inside the folded rubric (press e), never graded. */
+/* redFlags: a talking point for the facilitator. Shown inside the folded rubric (Rubric button, trainer view), never graded. */
 function redFlagsOf(n){
   var r=n.redFlags;if(!r)return null;
   if(Array.isArray(r))r={phrases:r};
@@ -724,18 +1147,21 @@ function redLineHTML(n){
 }
 function maxTries(n){var m=parseInt(n.tries||DATA.tries||3,10);return m>0?m:3;}
 function renderEvaluate(n,nodeId){
-  var expand=n.showRubric===true||isTrainer();
+  /* v0.5: the Rubric button is trainer-only, and the rubric starts folded so the trainer chooses when to reveal it.
+     showRubric:true (a rubric-teaching scenario) shows it to everyone, open. */
+  var rubBtn=isTrainer()||n.showRubric===true,expand=n.showRubric===true;
+  var tapTxt=rubBtn?' - tap Rubric to show them':'';
   var tries=S.tries[nodeId]||0,max=maxTries(n);
   S.drafts=S.drafts||{};
   var ask=n.speaker
     ? '<div class="vpq"><b>'+esc(n.speaker)+'</b>&ldquo;'+fmt(n.question||n.prompt)+'&rdquo;</div>'
     : '<div class="prompt">'+fmt(n.question||n.prompt)+'</div>';
   var head=n.speaker
-    ? '<div class="phead"><span style="flex:1"></span>'+affBar(n,n.criteria.length)+'</div>'+ask
-    : '<div class="phead">'+ask+affBar(n,n.criteria.length)+'</div>';
+    ? '<div class="phead"><span style="flex:1"></span>'+affBar(n,rubBtn?n.criteria.length:0)+'</div>'+ask
+    : '<div class="phead">'+ask+affBar(n,rubBtn?n.criteria.length:0)+'</div>';
   var body=head+ctxHTML(n)+mediaHTML(n.media)+
     '<textarea id="ans" placeholder="'+esc(n.placeholder||'Write your answer. Two or three sentences is enough.')+'">'+esc(S.drafts[nodeId]||'')+'</textarea>'+
-    '<div class="rubwrap"><div class="rlab" id="rlab">'+n.criteria.length+' criteria - tap Rubric to show them</div>'+
+    '<div class="rubwrap"><div class="rlab" id="rlab">'+(rubBtn?n.criteria.length+' criteria'+tapTxt:'Graded against '+n.criteria.length+' criteria')+'</div>'+
     '<div class="rubric'+(expand?'':' folded')+'" id="rub">'+n.criteria.map(function(c){
       return '<div class="crit"><span class="mk"></span><span>'+esc(c.label)+'</span></div>';}).join('')+redLineHTML(n)+'</div></div>'+
     '<div class="linkrow"><button class="primary" id="sub" style="margin-top:0">Submit for grading'+(max>1?' (attempt '+(tries+1)+' of '+max+')':'')+'</button>'+
@@ -745,7 +1171,7 @@ function renderEvaluate(n,nodeId){
   wireAff(n);
   if(expand){var eb=document.getElementById('eBtn');if(eb)eb.classList.add('on');}
   if(tries)document.getElementById('rlab').textContent=
-    'Attempt '+(tries+1)+' of '+max+' - '+n.criteria.length+' criteria, tap Rubric to show them';
+    'Attempt '+(tries+1)+' of '+max+' - '+n.criteria.length+' criteria'+(rubBtn?', tap Rubric to show them':'');
 
   var mb=document.getElementById('modelBtn');
   if(mb)mb.addEventListener('click',function(){
@@ -783,7 +1209,7 @@ function revealGrade(n,nodeId,txt){
   var tries=S.tries[nodeId],left=Math.max(0,maxTries(n)-tries),miss=total-res.score;
   if(typeof n.step==='number')S.chips[n.step]=res.score+'/'+total;
   document.getElementById('rlab').textContent=
-    res.score+' of '+total+' criteria met - tap Rubric to see which';
+    res.score+' of '+total+' criteria met'+((isTrainer()||n.showRubric===true)?' - tap Rubric to see which':'');
 
   var fb;
   if(pass){fb=n.passNote||'Every criterion covered.';}
@@ -828,7 +1254,7 @@ function showEnding(key,e){
     (rev?'<ul class="revealed">'+rev+'</ul>':'')+
     mediaHTML(e.media)+
     '<details class="pathbox"><summary>See your path - every decision and what it led to</summary>'+pathHTML(key,e)+'</details>'+
-    sendHTML()+
+    cardHTML()+sendHTML()+
     '<button class="ghost" id="again" style="margin-left:0">Run it again</button>',null,affBar(e,0));
   wireAff(e);wireSend(key,e);
   document.getElementById('again').addEventListener('click',function(){start(S.sc);});
@@ -873,7 +1299,7 @@ function sessionSummary(endKey,e){
 /* ---------------------------- v0.3: send to trainer ---------------------------- */
 function b64(s){try{return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}catch(x){return '';}}
 function resultObj(endKey,name){var s=byId(S.sc);
-  return {v:2,s:s.id,t:s.title,n:name||'',at:new Date().toISOString(),end:endKey,
+  return {v:2,s:s.id,t:s.title,n:name||'',at:new Date().toISOString(),end:endKey,r:S.seed,
     log:S.log.map(function(l){
       if(l.kind==='choice')return {k:'c',n:l.node,i:l.i,g:l.gated?1:0};
       if(l.kind==='multi')return {k:'m',n:l.node,sel:l.sel||[]};
@@ -882,26 +1308,65 @@ function resultObj(endKey,name){var s=byId(S.sc);
       return null;}).filter(Boolean)};}
 function resultCode(endKey,name){return 'PUP2:'+b64(JSON.stringify(resultObj(endKey,name)));}
 function savedName(){try{return localStorage.getItem('pup-name')||'';}catch(x){return '';}}
-function sendHTML(){var to=DATA.sendTo||{};
+function sendEmail(){var to=DATA.sendTo||{};return String(to.email||'').trim()||DEFAULT_EMAIL;}
+function sendHTML(){
   return '<div class="send"><h3>Send your result to your trainer</h3>'+
     '<p>Your trainer sees your choices and what you wrote. In class, answers are shown without names.</p>'+
     '<label for="lname">Your name</label><input id="lname" autocomplete="given-name" value="'+esc(savedName()).replace(/"/g,'&quot;')+'">'+
     '<p class="sm" id="consent">By sending this, you agree that Gaurav Joshi sees your name, choices and written answers to give you feedback. Your name is optional.</p>'+
-    '<div class="row"><a class="sbtn" id="sendMail" href="#">Send by email</a>'+
+    '<div class="row"><a class="sbtn" id="sendGmail" href="#" target="_blank" rel="noopener">Send with Gmail</a>'+
+    '<a class="sbtn alt" id="sendOutlook" href="#" target="_blank" rel="noopener">Send with Outlook</a>'+
+    '<a class="sbtn alt" id="sendMail" href="#">Mail app</a>'+
     '<button class="sbtn alt" id="sendCopy">Copy result</button>'+
     '<button class="sbtn alt" id="saveRep">Save my report</button></div>'+
-    '<p class="sm" style="margin-top:8px">The report has your path as a diagram, what each choice led to, and why.</p>'+
-    '</div>';}
-function sendText(endKey,e,name){return sessionSummary(endKey,e)+'\n\nResult code for your trainer:\n'+resultCode(endKey,name);}
+    '<p class="sm" style="margin-top:8px">Email goes to '+esc(sendEmail())+'. Gmail and Outlook open in your browser with the email written for you; your result is copied as well, so if the email comes up empty, paste it in. Nothing works? Tap Copy result and send it however you like.</p>'+
+    '<p class="sm">The report has your path as a diagram, what each choice led to, and why.</p></div>';}
+function sendText(endKey,e,name){var c=cardCode(endKey,name);
+  return sessionSummary(endKey,e)+'\n\nResult code for your trainer:\n'+resultCode(endKey,name)+(c?'\n\nYour persona card code:\n'+c:'');}
+/* ---------------------------- v0.5: persona card ----------------------------
+   Indicative bands from this run, for the public card page. The card code carries the scenario, the anchor number,
+   the bands and the learner's name (they can switch it off on the card page) - never their choices or written answers. */
+var CARD_URL='https://gsj24983.github.io/swanubhava-play/card.html';
+var ANCHOR_NO={'acts with integrity under pressure':1,"embodies a learner's mindset":2,'strives for clarity and outcomes':3,
+ 'builds trust and psychological safety':4,'stays present and grounded under ambiguity':5,'listens beyond the ask to uncover the need':6,
+ 'challenges assumptions, reframes and holds a point of view':7,'converts insight into owned outcomes':8};
+function bandOf(f){return f==null?null:f>=0.85?4:f>=0.6?3:f>=0.35?2:1;}
+function cardData(){var s=byId(S.sc),no=ANCHOR_NO[String(anchorOf(s)).trim().toLowerCase()];if(!no)return null;
+  var nodes=s.nodes||{},first={},dec=[],notc=[],say=[];
+  S.log.forEach(function(l){if(l.kind==='choice'&&!(l.node in first))first[l.node]=l;});
+  Object.keys(first).forEach(function(k){var n=nodes[k],c=n&&n.choices&&n.choices[first[k].i];if(!c)return;var g=choiceGood(n,c);if(g!==null)dec.push(g?1:0);});
+  S.log.forEach(function(l){var n=nodes[l.node];if(!n)return;
+    if(l.kind==='multi'){var need=n.correct||[],sel=l.sel||[],hit=0,ex=0;sel.forEach(function(i){need.indexOf(i)>-1?hit++:ex++;});
+      if(need.length)notc.push(Math.max(0,Math.min(1,(hit-ex)/need.length)));}
+    if(l.kind==='written'){var m=l.met||[];if(m.length)say.push(m.filter(Boolean).length/m.length);}});
+  var avg=function(a){return a.length?a.reduce(function(x,y){return x+y;},0)/a.length:null;};
+  var fn=avg(notc),fd=avg(dec),fw=avg(say),all=[fn,fd,fw].filter(function(x){return x!=null;});
+  if(!all.length)return null;
+  return {v:1,s:s.id,t:s.title,a:no,b:[bandOf(fn),bandOf(fd),bandOf(fw)],o:bandOf(avg(all)),r:S.seed||0,d:new Date().toISOString().slice(0,10)};}
+function cardCode(endKey,name){var c=cardData();if(!c)return '';c.n=name||'';return 'CARD1:'+b64(JSON.stringify(c));}
+function cardUrl(name){var c=cardCode(null,name);return c?(DATA.cardUrl||CARD_URL)+'#c='+c.slice(6):'';}
+function cardHTML(){if(!cardData())return '';
+  return '<div class="send pcard"><h3>Make your persona card</h3>'+
+    '<p>See which Swanubhava&trade; persona this run brought out, and share the card if you like. It shows your name, the scenario and indicative bands - never your answers. You can take your name off on the card page.</p>'+
+    '<div class="row"><a class="sbtn" id="cardGo" href="#" target="_blank" rel="noopener">Make my persona card</a></div>'+
+    '<p class="sm"><b>Send your result to your trainer below for your full Swanubhava Revelation.</b></p></div>';}
 function copyText(t,done){var fb=function(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
     try{document.execCommand('copy');}catch(x){}document.body.removeChild(ta);done();};
   try{if(navigator.clipboard)navigator.clipboard.writeText(t).then(done,fb);else fb();}catch(x){fb();}}
-function wireSend(endKey,e){var to=DATA.sendTo||{},inp=document.getElementById('lname');if(!inp)return;
+function wireSend(endKey,e){var inp=document.getElementById('lname');if(!inp)return;
   function upd(){var nm=inp.value.trim();try{localStorage.setItem('pup-name',nm);}catch(x){}
     var t=sendText(endKey,e,nm);
-    document.getElementById('sendMail').href='mailto:'+encodeURIComponent(to.email||'swanubhava.by.gsj@gmail.com')+'?subject='+
-      encodeURIComponent('Puppeteer result - '+byId(S.sc).title+(nm?' - '+nm:''))+'&body='+encodeURIComponent(t);}
+    /* v0.5: mailto needs a mail app set as the default, and on many laptops there is none (the browser then asks
+       which app to open, and a browser opens blank). Gmail and Outlook on the web need only a browser. */
+    var to=encodeURIComponent(sendEmail()),su=encodeURIComponent('Puppeteer result - '+byId(S.sc).title+(nm?' - '+nm:'')),bo=encodeURIComponent(t);
+    document.getElementById('sendGmail').href='https://mail.google.com/mail/?view=cm&fs=1&to='+to+'&su='+su+'&body='+bo;
+    document.getElementById('sendOutlook').href='https://outlook.office.com/mail/deeplink/compose?to='+to+'&subject='+su+'&body='+bo;
+    document.getElementById('sendMail').href='mailto:'+to+'?subject='+su+'&body='+bo;
+    var cg=document.getElementById('cardGo');if(cg)cg.href=cardUrl(nm);}
   inp.addEventListener('input',upd);upd();
+  /* every send also copies the result, so a mail page that drops a long body is one paste away */
+  ['sendGmail','sendOutlook','sendMail'].forEach(function(id){document.getElementById(id).addEventListener('click',function(){
+    copyText(sendText(endKey,e,inp.value.trim()),function(){var c=document.getElementById('sendCopy');if(c)c.textContent='Copied too';});});});
   document.getElementById('sendCopy').addEventListener('click',function(){var b=this;
     copyText(sendText(endKey,e,inp.value.trim()),function(){b.textContent='Copied';});});
   document.getElementById('saveRep').addEventListener('click',function(){var b=this;

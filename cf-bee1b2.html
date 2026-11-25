@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="generator" content="Puppeteer engine v0.3">
+<meta name="generator" content="Puppeteer engine v0.5">
 <title>Swanubhava scenarios - The compassion fare</title>
 <style>
 :root{
@@ -275,7 +275,7 @@ figure.blk.img .b-cap{font-weight:400;margin:8px 6px 2px}
       <rect x="24.5" y="21" width="7" height="7" rx="1.4" transform="rotate(45 28 24.5)" fill="#F2C14E"/>
     </svg>
     <h1 id="deckTitle">The Puppeteer</h1>
-    <span class="sub" title="Puppeteer engine v0.3">Learn by deciding</span>
+    <span class="sub" title="Puppeteer engine v0.5">Learn by deciding</span>
     <button class="themeBtn" id="themeBtn" title="Switch theme" aria-label="Switch theme">
       <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9">
         <circle cx="12" cy="12" r="4.4"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/>
@@ -302,8 +302,501 @@ figure.blk.img .b-cap{font-weight:400;margin:8px 6px 2px}
 /* =====================================================================
    THE PUPPETEER - player engine. Frozen. Content lives in DATA below.
    ===================================================================== */
-var DATA = {"deckTitle":"Swanubhava scenarios","scenarios":[{"anchor":"Acts with integrity under pressure","behaviour":"speaks up for end users when a request works against them","blurb":"Your airline's AI assistant told a grieving customer she could claim a discount after booking. She could not. Legal has a cheap way out. One thing to notice, three decisions and one note to write, about 25 minutes.","endings":{"good":{"moral":"If it speaks on your behalf, it represents you.","revealed":[["Pattern 1","When AI touches money or policy, it's making promises. Treat them as yours."],["Pattern 2","Size it before you solve it. One complaint is rarely one customer."],["Pattern 3","Before 'how accurate?', ask 'wrong on what, and who pays?'"]],"scene":"launch","step":6,"title":"You own your AI's decisions","verdict":"**Consequences:** \n- Wednesday's review takes twelve minutes. \n- Arjun approves refunds for all 41, and Farah's wording goes out the same afternoon. \n- By Friday, 33 of the 41 have replied, most with some version of 'thank you for telling me first'. \n- Meera updates her post: SkyBridge got it wrong, and then put it right. \n- A travel journalist who had seen Meera's post runs a short item the next week about an airline that found its own mistake. \n- Fare answers come back two weeks later, quoting the policy page, with a weekly look at everything the assistant was unsure about.\n\n**The real case:** \n- In 2024 a Canadian tribunal ruled on almost exactly this situation. \n- Air Canada's website chatbot told a grieving passenger, Jake Moffatt, that he could book at the normal fare and claim the bereavement fare afterwards.\n- The policy page the chatbot linked to said the opposite. \n- The airline offered him a voucher, argued he should have read the policy page, and even argued the chatbot was responsible for its own actions. \n- The tribunal said the chatbot is simply part of the airline's website, that the airline is responsible for everything on its website, and ordered it to pay him the fare difference plus interest and fees. (Moffatt v. Air Canada, 2024.)\n**Patterns to remember:**"},"partial":{"moral":"It was just the quiet before the storm","revealed":[["Pattern 1","When AI touches money or policy, it's making promises. Treat them as yours."],["Pattern 2","Size it before you solve it. One complaint is rarely one customer."],["Pattern 3","Before 'how accurate?', ask 'wrong on what, and who pays?'"]],"scene":"storm","step":6,"title":"Ticking timebomb","verdict":"**Consequences:** \n- Your note did not change the room, so Wednesday went Farah's way: a voucher for Meera, nothing for the rest, and a holding line for a travel journalist - 'an isolated case, which we are reviewing'. \n- For a day it worked. The post slowed down and Arjun thanked everyone. \n- Then on Thursday the journalist published three more screenshots and asked how many there were. \n- The logs said 214. SkyBridge had said 'isolated'. \n- The refunds for all 41 were paid on Friday anyway - as a correction, not a choice - and leadership pulled the assistant for a month while the story ran. \n- Same money, a worse week, and no assistant.\n\n**The real case:** \n- In 2024 a Canadian tribunal ruled on almost exactly this situation. \n- Air Canada's website chatbot told a grieving passenger, Jake Moffatt, that he could book at the normal fare and claim the bereavement fare afterwards.\n- The policy page the chatbot linked to said the opposite. \n- The airline offered him a voucher, argued he should have read the policy page, and even argued the chatbot was responsible for its own actions. \n- The tribunal said the chatbot is simply part of the airline's website, that the airline is responsible for everything on its website, and ordered it to pay him the fare difference plus interest and fees. (Moffatt v. Air Canada, 2024.)\n**Patterns to remember:**"}},"hideArt":true,"highlight":false,"id":"new-compassion-fare","kicker":"Owning what your AI promised","meta":"25 min - 1 read, 3 decisions, 1 written","nodes":{"brief":{"blocks":[{"at":"top","people":[{"lines":"The assistant sits in his budget, and he decides what CX spends on.","name":"Arjun","role":"Sponsor: Head of CX"},{"lines":"Responsible for tightening the fare rules to optimize SkyBridge's discounts and cashflows","name":"Farah","role":"Financial advisor"},{"lines":"Your tech partner who built the assistant and knows the ins and outs of the system","name":"Vikram","role":"Engineering lead"}],"title":"Three people matter this week","type":"people"}],"eyebrow":"Briefing","media":[],"scene":"office","step":1,"text":"**Additional info:** \n- SkyBridge has a **compassion fare**: a discounted fare for someone travelling because a close family member has died or is critically ill. \n- The policy page says it must be requested **before** the ticket is booked. You **cannot claim it afterwards.**\n- The assistant can link customers to policy pages, and it usually does.\n- It answers from a knowledge pack the CX team put together: old help centre articles + the fare rules (as of June).  ","title":"Three months in","to":"monday","type":"narrative"},"d1":{"choices":[{"chip":"All off","consequence":{"lesson":"Taking everything down feels responsible, and it is the easiest thing to defend in a meeting. But it switched off a lot that was working, and it did not answer the only question that mattered this morning: who else was impacted? Stopping new harm and finding the harm already done are two different jobs.","scene":"storm","text":"**Consequences:** \n- Vikram switches it off at 9:50. \n- By noon the call-centre queue is 40+ mins long \n- those 2,500 chats a day were mostly seat changes and baggage questions, and every one of them became a phone call. \n- Arjun spends the afternoon explaining the queue to his boss. \n- At 3 pm someone finally asks how many other people got the compassion fare answer. Nobody has looked. \n\n**Switching the assistant off stopped the next wrong answer but you wasted 5-6 hrs to analyze the wrong answers already given.**","title":"Safe, loud and still blind"},"k":"A","label":"Take the whole assistant offline until it is fixed","sub":"","tag":"All offline","to":"d2"},{"chip":"Patched","consequence":{"lesson":"The patch fixed tomorrow's answer. It said nothing about the last ten weeks. One screenshot is rarely one customer - it is just the customer who posted. **Size it before you solve it.**","scene":"storm","text":"**Consequences:** \n- Vikram's patch is live by 10:40 am. He asks the assistant about the compassion fare five times and gets the right answer five times. \n- Arjun's team sends Meera a warm reply with a link to the claims process. \n- At 3 pm Arjun forwards you a message from another customer, Rohan: same question, same answer, same rejection - back in September. \n- Now you pull the logs. Four hours later than you could have.","title":"Fixed, until 3 pm"},"k":"B","label":"Let Vikram patch the prompt, reply to Meera with an apology, and move on","sub":"","tag":"Patched and moved on","to":"d2"},{"chip":"Contained","consequence":{"good":true,"lesson":"You contained the risky part, kept the rest running, and went looking for the people who had not complained. Also notice what you did not do: you did not argue with Meera's post, and you did not let 'fix the prompt' stand in for 'find out what happened'.","scene":"team","text":"**Consequences:** \n- Vikram adds a topic filter in 40 minutes. Any fare or policy question now gets \"Let me connect you to someone who can confirm this\" and goes to a person. \n- Seat changes and baggage carry on as normal.\n- Arjun's team sends Meera a short holding reply with an update promised by 6 pm. \n- You ask the data team for every chat since launch that mentions compassion, bereavement or a death in the family.\n\nAt 3:30 pm the answer comes back:\n- 214 chats in ten weeks got the 60-day claim window. \n- 41 of those customers went on to book at the normal fare.\n- The sum of refundable booking amount for these cases is ₹5,80,000","title":"Contained by 10:15 am, sized by 3:30"},"k":"C","label":"Switch off only fare and policy answers now, send those questions to a person, and pull the logs to see who else got this answer","sub":"","tag":"Contained and sized","to":"d2"}],"prompt":"**9:30 am Meeting:** \nArjun: \"So what do we do - right now?\"","scene":"conflict","step":3,"type":"choice"},"d2":{"choices":[{"chip":"Voucher","consequence":{"lesson":"The voucher looked like the end of it, and it cost almost nothing today. But it answered the wrong question. Meera did not want goodwill - she wanted SkyBridge to stand behind what SkyBridge told her. And the impacted 41 users were always going to find each other.","scene":"storm","text":"**Consequences:**\n- The voucher email goes out at 5:40 pm. \n- At 5:55 Meera posts that too: \"A ₹2,000 voucher from the airline whose bot cost me ₹14,200.\" \n- At 6:15 a second customer replies under her post with his own screenshot \n- same answer, word for word. \n- By 8 pm a journalist from a travel site has emailed CX with a simple question: how many other customers got this answer? \n- Arjun forwards it to you with one line: \"What do we say?\"","title":"6:15 pm, the reply under the reply"},"k":"A","label":"Go with Farah - a voucher for Meera, and close the ticket (Impact = ₹2,000)","sub":"","tag":"Voucher and close","to":"write"},{"chip":"Meera only","consequence":{"lesson":"This felt fair, and it was fair - to one person. You paid the customer with the loudest voice and left the others with the same promise and the same loss. Putting things right only for whoever complains is not a policy. It is a queue.","scene":"storm","text":"**Consequences:** \n- Meera's refund lands on Tuesday morning. \n- She posts a short thank-you and the thread cools down. \n- Arjun is relieved. \n- Meanwhile two of the other 41 have already filed their own claims, and on Tuesday afternoon both get the standard rejection. The same response Meera got. \n- One of them has seen Meera's thank-you post.","title":"One customer happy, forty waiting"},"k":"B","label":"Refund Meera in full, quietly, and leave the other 41 alone (Impact = ₹14,200)","sub":"","tag":"Meera only","to":"write"},{"chip":"All 41","consequence":{"good":true,"lesson":"If the bot is on your site, its words are your words. Whether to put it right is a business decision, and it was never Farah's alone to make. Also notice what you did not do: you did not wait for the other 40 to find out on social media. Hence avoiding probable future disaster","scene":"team","text":"**Consequences:** \n- You say it plainly on the call: the assistant is on our booking site, under our name, so its answer was our answer. All 41 get the difference refunded, and they hear it from SkyBridge first. And we shall communicate with approved verbiage from Finance and Legal as money is involved.\n- Farah pushes back hard on admitting anything, then agrees to draft the wording: \"I'll write it. I'm not agreeing to paying all of them yet.\" \n- Arjun says it is his budget and he will decide on Wednesday. He wants your recommendation in writing.","title":"Farah takes the pen, not the decision"},"k":"C","label":"Proactively contact and refund all the 41 impacted users before they raise their voice. (Impact = ₹5,80,000)","sub":"","tag":"Honour all 41","to":"write"}],"prompt":"**Monday, 4 pm.** \n- The logs are in: in ten weeks, 214 chats gave the 60-day claim window, 41 of those customers booked at the normal fare. \n- The sum of refundable booking amount for these cases is ₹5,80,000\n- Arjun has a review on Wednesday and wants a position from you tonight. \n- Farah: \"Offer Meera a ₹2,000 voucher as goodwill and close the ticket. No admission. The rest haven't complained.\" \n\n**What position do you take?**","scene":"conflict","step":4,"type":"choice"},"intro":{"eyebrow":"Before you start","media":[],"scene":"ai","step":0,"text":"- **SkyBridge Air** is a global aviation carrier and booking platform offering scheduled passenger flights across domestic and international routes. \n- It provides standardized ticketing, multi-class cabin options, and direct itinerary management for individual and corporate travelers.\n\n**You are the associate product manager** for the SkyBridge Air booking assistant - the AI chat on the booking site that answers fare, baggage and seat questions.\n\nIt **went live in mid-July and now handles about 2,500 chats a day**, mostly seat changes and baggage allowances. The call centre has noticed the difference. You own the assistant day to day. It was your first launch here, and you are rather proud of it.\n\n**Note:** SkyBridge Air, the people and the numbers are made up. ","title":"What is this scenario about?","to":"brief","type":"narrative"},"monday":{"blocks":[{"alt":"Meera's post about the fare, with the assistant's reply","at":"top","caption":"","src":"https://gsj24983.github.io/puppeteer-sbl/images/user%20tweet.png","type":"image"}],"eyebrow":"The Complaint","media":[],"scene":"ai","step":1,"text":"Arjun drops this screenshot into the team channel with one line: \n\n- **Arjun:** \"Let's tackle this ASAP.\"\n\n- **Farah:** \"The bot links to the policy page. The policy is clear. She should have read it.\"\n\n- **Vikram:** \"Let's fix the prompt in an hour.\"\n\n- **Arjun:** \"Meeting in 5 mins to respond to her by lunch. Let's also hear what product has to say about this\"","title":"Monday, 9:10 am","to":"see","type":"narrative"},"see":{"correct":[0,1,2],"missNote":"You are still missing: ","options":[{"label":"The assistant made a specific promise - a claim window - in SkyBridge's name","why":"This matters because you own the Assistant and hence you own its claims"},{"label":"The assistant's answer and the policy page disagree, so they are not coming from the same source","why":"This matters because it is a logical inference from the symptom"},{"label":"If it gave Meera this answer, it has probably given it to other people too","why":"This matters because  it defines the impact radius"},{"label":"The assistant linked to the policy page, so Meera had the right information in front of her","why":"A link under the answer does not cancel the answer above it"},{"label":"The post is spreading fast, so the speed of the public backlash is the main problem","why":"Speed matters, but you cannot answer well before you know how many others got impacted"},{"label":"The prompt needs better wording","why":"The wording is a symptom; it might be the quick fix but not the right solution without understanding impact and root cause"}],"prompt":"**Ten minutes before the call**: \nWhat are the critical pieces of information to be focused on from the screenshot?","scene":"matrix","step":2,"successNote":"Right. The assistant made a promise in SkyBridge's name, it is not reading the page it links to, and anything it said to one user it has probably said to others as well. The other three sound true, and they are exactly what the channel is already talking about. A link underneath does not cancel the answer above it, the speed of the backlash is not the problem, and the prompt wording is a symptom.","to":"d1","type":"multi"},"write":{"coachLead":"To get this past Farah, ","context":[{"label":"What Arjun asked for","text":"Four sentences to him and Farah before Wednesday's CX review: what you recommend, and why. Farah will read it first."}],"criteria":[{"coach":"say plainly that the assistant's answer was SkyBridge's promise and that Meera is not the only one - the logs found 214 chats and 41 bookings, and a note that treats this as one complaint is the note that ends in 'an isolated case'","hint":"promise made, not one customer","keywords":["our promise","we promised","a promise","made a promise","promised her","promised them","commitment","committed us","our answer","our words","its words","speaks for us","on our site","on our website","on our booking site","under our name","in our name","we told her","we told them","not one customer","not a one off","not an isolated","not isolated","other customers","same answer","41 customers","41 people","41 bookings","all 41","the 41","other 41","other 40","214"],"label":"Names the cue: the assistant made a promise in SkyBridge's name, and this is not one customer"},{"coach":"say why it happened - the assistant answers from the knowledge pack built in June, before Farah tightened the rules in August, so it was quoting the old rule while linking to the new page, and a prompt patch does nothing about that","hint":"wrong source, not a bad prompt","keywords":["knowledge pack","old rule","old rules","old policy","old fare rule","old help centre","old help center","out of date","outdated","stale","before the august","august change","august rewrite","august update","rule change","since august","never refreshed","not refreshed","never updated","different source","two sources","source of truth","not the policy page","not reading the policy","isn t reading the policy","doesn t read the policy","not reading the page","not a prompt problem","not a bad prompt","not just the prompt","not the prompt","prompt won t fix","prompt doesn t fix"],"label":"Names the real problem: the assistant answers from a different source than the policy page, not a bad prompt"},{"coach":"put the voucher route next to yours and say why it fails - it only stays cheap for as long as the other 40 never see Meera's post, and that post had 1,800 reposts by Monday morning","hint":"the voucher route and why it fails","keywords":["voucher route","voucher option","the voucher would","the voucher looks","voucher looks","voucher is cheaper","voucher only","voucher saves","voucher costs","voucher fails","voucher won t","voucher doesn t","voucher leaves","instead of the voucher","instead of a voucher","rather than a voucher","rather than the voucher","than the voucher","looks cheaper","cheaper today","cheaper now","cheaper on paper","if we do nothing","doing nothing","do nothing","two options","other option","alternative","versus","compared with","compared to"],"label":"Puts at least two options side by side, including the voucher route or doing nothing, and says why that one fails"},{"coach":"recommend honouring all 41 and put a number on it - about ₹5.8 lakh against Farah's ₹2,000 voucher - with the best and the worst case, because Arjun decides on Wednesday and a recommendation without a cost is one he cannot sign","hint":"honour all 41, cost, best and worst case","keywords":["honour the","honour all","honour what","honour its","honour it","honor the","honor all","honor what","honor it","refund all","refund the 41","refund every","refund them all","pay all 41","pay the 41","pay the difference","refund the difference","make it right for all","5 8 lakh","5 82 lakh","5 8l","582","lakh","best case","worst case","at best","at worst","total cost"],"label":"Recommends honouring all 41, with the cost stated and the best and worst case"},{"coach":"close with who does what by when - Farah on the wording, a date for the relaunch limits, and when you will update them next, because Arjun decides on Wednesday and the 41 should hear from SkyBridge before they hear from each other","hint":"wording, relaunch date, next update","keywords":["wording","farah drafts","farah to draft","farah writes","farah owns","legal drafts","legal owns","legal writes","relaunch","re launch","back on","go live","switch back on","next update","update you","update both","update by","i ll update","will update","report back","weekly review","flagged chats","by monday","by tuesday","by wednesday","by thursday","by friday","by end of","two weeks from"],"label":"Plans the follow-through: Finance and legal owns the wording, a date for the relaunch limits, and a promised next update"}],"eyebrow":"Tuesday, 6 pm","model":"Arjun, Farah - \n\nI recommend we honour the assistant's answer for all 41 customers who booked. Refund the difference (about ₹5.8 lakh in total) and contact them before they contact us. Farah finalizes the wording with legal. \n\nThe assistant sits on our booking site under our name, so its 60-day answer was our promise. 214 chats got it because it still answers from the old knowledge pack from before the August rule change, not the policy page - so this is not one customer and not a prompt problem. \n\nThe voucher route looks cheaper today, but if we do nothing more the other 40 will find Meera's post and a journalist will get the numbers from someone else: in the worst case we pay the same ₹5.8 lakh anyway as a public correction and lose the assistant for weeks, and in the best case on my route we pay once and the story is that we found it and fixed it. \n\nFare and policy answers stay with people until the assistant quotes the policy page and hands money questions to a person, with a relaunch two weeks from Monday, and I will update you both on the 41 contacts by Thursday 6 pm.","modelExplain":"This does five things. It <b>names the promise and the scale</b> (our site, our name, 214 chats). It <b>names the real cause</b> - the old knowledge pack, not the prompt. It <b>puts the voucher route next to yours and says why it fails</b>. It <b>recommends honouring all 41 with the cost and the best and worst case</b>. And it <b>closes with who does what by when</b> - Farah on the wording, a relaunch date, the next update. Notice it never says Meera should have read the page. Edit it, or submit it as it stands to see the grade.","pass":5,"passNote":"Promise, cause, options, cost and follow-through. Farah can still disagree, but she cannot say she was not told.","placeholder":"Arjun, Farah - my recommendation for Wednesday...","question":"If we refund Meera in full, we lose ₹14,200. If we refund all 41, we admit liability to all and end up paying around ₹5,80,000. \n\nConvince me this is cheaper than the voucher or even the full refund to Meera.","scene":"office","speaker":"Farah, Financial advisor","step":5,"title":"Four sentences to Arjun and Farah","toFail":"partial","toPass":"good","type":"evaluate"}},"start":"intro","steps":["What it is about","Briefing","What you are seeing","The first hour","The decision under pressue","Write to Farah","Debrief"],"tag":"AI in product","thumb":"ai","title":"The compassion fare"}]};
+var DATA = {
+ "deckTitle": "Swanubhava scenarios",
+ "scenarios": [
+  {
+   "anchor": "Acts with integrity under pressure",
+   "behaviour": "speaks up for end users when a request works against them",
+   "blurb": "Your airline's AI assistant told a grieving customer she could claim a discount after booking. She could not. Legal has a cheap way out. One thing to notice, three decisions and one note to write, about 25 minutes.",
+   "endings": {
+    "good": {
+     "moral": "If it speaks on your behalf, it represents you.",
+     "revealed": [
+      [
+       "Pattern 1",
+       "When AI touches money or policy, it's making promises. Treat them as yours."
+      ],
+      [
+       "Pattern 2",
+       "Size it before you solve it. One complaint is rarely one customer."
+      ],
+      [
+       "Pattern 3",
+       "Before 'how accurate?', ask 'wrong on what, and who pays?'"
+      ]
+     ],
+     "scene": "launch",
+     "step": 6,
+     "title": "You own your AI's decisions",
+     "verdict": "**Consequences:** \n- Wednesday's review takes twelve minutes. \n- Arjun approves refunds for all 41, and Farah's wording goes out the same afternoon. \n- By Friday, 33 of the 41 have replied, most with some version of 'thank you for telling me first'. \n- Meera updates her post: SkyBridge got it wrong, and then put it right. \n- A travel journalist who had seen Meera's post runs a short item the next week about an airline that found its own mistake. \n- Fare answers come back two weeks later, quoting the policy page, with a weekly look at everything the assistant was unsure about.\n\n**The real case:** \n- In 2024 a Canadian tribunal ruled on almost exactly this situation. \n- Air Canada's website chatbot told a grieving passenger, Jake Moffatt, that he could book at the normal fare and claim the bereavement fare afterwards.\n- The policy page the chatbot linked to said the opposite. \n- The airline offered him a voucher, argued he should have read the policy page, and even argued the chatbot was responsible for its own actions. \n- The tribunal said the chatbot is simply part of the airline's website, that the airline is responsible for everything on its website, and ordered it to pay him the fare difference plus interest and fees. (Moffatt v. Air Canada, 2024.)\n**Patterns to remember:**"
+    },
+    "partial": {
+     "moral": "It was just the quiet before the storm",
+     "revealed": [
+      [
+       "Pattern 1",
+       "When AI touches money or policy, it's making promises. Treat them as yours."
+      ],
+      [
+       "Pattern 2",
+       "Size it before you solve it. One complaint is rarely one customer."
+      ],
+      [
+       "Pattern 3",
+       "Before 'how accurate?', ask 'wrong on what, and who pays?'"
+      ]
+     ],
+     "scene": "storm",
+     "step": 6,
+     "title": "Ticking timebomb",
+     "verdict": "**Consequences:** \n- Your note did not change the room, so Wednesday went Farah's way: a voucher for Meera, nothing for the rest, and a holding line for a travel journalist - 'an isolated case, which we are reviewing'. \n- For a day it worked. The post slowed down and Arjun thanked everyone. \n- Then on Thursday the journalist published three more screenshots and asked how many there were. \n- The logs said 214. SkyBridge had said 'isolated'. \n- The refunds for all 41 were paid on Friday anyway - as a correction, not a choice - and leadership pulled the assistant for a month while the story ran. \n- Same money, a worse week, and no assistant.\n\n**The real case:** \n- In 2024 a Canadian tribunal ruled on almost exactly this situation. \n- Air Canada's website chatbot told a grieving passenger, Jake Moffatt, that he could book at the normal fare and claim the bereavement fare afterwards.\n- The policy page the chatbot linked to said the opposite. \n- The airline offered him a voucher, argued he should have read the policy page, and even argued the chatbot was responsible for its own actions. \n- The tribunal said the chatbot is simply part of the airline's website, that the airline is responsible for everything on its website, and ordered it to pay him the fare difference plus interest and fees. (Moffatt v. Air Canada, 2024.)\n**Patterns to remember:**"
+    }
+   },
+   "hideArt": true,
+   "highlight": false,
+   "id": "new-compassion-fare",
+   "kicker": "Owning what your AI promised",
+   "meta": "25 min - 1 read, 3 decisions, 1 written",
+   "nodes": {
+    "brief": {
+     "blocks": [
+      {
+       "at": "top",
+       "people": [
+        {
+         "lines": "The assistant sits in his budget, and he decides what CX spends on.",
+         "name": "Arjun",
+         "role": "Sponsor: Head of CX"
+        },
+        {
+         "lines": "Responsible for tightening the fare rules to optimize SkyBridge's discounts and cashflows",
+         "name": "Farah",
+         "role": "Financial advisor"
+        },
+        {
+         "lines": "Your tech partner who built the assistant and knows the ins and outs of the system",
+         "name": "Vikram",
+         "role": "Engineering lead"
+        }
+       ],
+       "title": "Three people matter this week",
+       "type": "people"
+      }
+     ],
+     "eyebrow": "Briefing",
+     "media": [],
+     "scene": "office",
+     "step": 1,
+     "text": "**Additional info:** \n- SkyBridge has a **compassion fare**: a discounted fare for someone travelling because a close family member has died or is critically ill. \n- The policy page says it must be requested **before** the ticket is booked. You **cannot claim it afterwards.**\n- The assistant can link customers to policy pages, and it usually does.\n- It answers from a knowledge pack the CX team put together: old help centre articles + the fare rules (as of June).  ",
+     "title": "Three months in",
+     "to": "monday",
+     "type": "narrative"
+    },
+    "d1": {
+     "choices": [
+      {
+       "chip": "All off",
+       "consequence": {
+        "lesson": "Taking everything down feels responsible, and it is the easiest thing to defend in a meeting. But it switched off a lot that was working, and it did not answer the only question that mattered this morning: who else was impacted? Stopping new harm and finding the harm already done are two different jobs.",
+        "scene": "storm",
+        "text": "**Consequences:** \n- Vikram switches it off at 9:50. \n- By noon the call-centre queue is 40+ mins long \n- those 2,500 chats a day were mostly seat changes and baggage questions, and every one of them became a phone call. \n- Arjun spends the afternoon explaining the queue to his boss. \n- At 3 pm someone finally asks how many other people got the compassion fare answer. Nobody has looked. \n\n**Switching the assistant off stopped the next wrong answer but you wasted 5-6 hrs to analyze the wrong answers already given.**",
+        "title": "Safe, loud and still blind"
+       },
+       "k": "A",
+       "label": "Take the whole assistant offline until it is fixed",
+       "sub": "",
+       "tag": "All offline",
+       "to": "d2"
+      },
+      {
+       "chip": "Patched",
+       "consequence": {
+        "lesson": "The patch fixed tomorrow's answer. It said nothing about the last ten weeks. One screenshot is rarely one customer - it is just the customer who posted. **Size it before you solve it.**",
+        "scene": "storm",
+        "text": "**Consequences:** \n- Vikram's patch is live by 10:40 am. He asks the assistant about the compassion fare five times and gets the right answer five times. \n- Arjun's team sends Meera a warm reply with a link to the claims process. \n- At 3 pm Arjun forwards you a message from another customer, Rohan: same question, same answer, same rejection - back in September. \n- Now you pull the logs. Four hours later than you could have.",
+        "title": "Fixed, until 3 pm"
+       },
+       "k": "B",
+       "label": "Let Vikram patch the prompt, reply to Meera with an apology, and move on",
+       "sub": "",
+       "tag": "Patched and moved on",
+       "to": "d2"
+      },
+      {
+       "chip": "Contained",
+       "consequence": {
+        "good": true,
+        "lesson": "You contained the risky part, kept the rest running, and went looking for the people who had not complained. Also notice what you did not do: you did not argue with Meera's post, and you did not let 'fix the prompt' stand in for 'find out what happened'.",
+        "scene": "team",
+        "text": "**Consequences:** \n- Vikram adds a topic filter in 40 minutes. Any fare or policy question now gets \"Let me connect you to someone who can confirm this\" and goes to a person. \n- Seat changes and baggage carry on as normal.\n- Arjun's team sends Meera a short holding reply with an update promised by 6 pm. \n- You ask the data team for every chat since launch that mentions compassion, bereavement or a death in the family.\n\nAt 3:30 pm the answer comes back:\n- 214 chats in ten weeks got the 60-day claim window. \n- 41 of those customers went on to book at the normal fare.\n- The sum of refundable booking amount for these cases is ₹5,80,000",
+        "title": "Contained by 10:15 am, sized by 3:30"
+       },
+       "k": "C",
+       "label": "Switch off only fare and policy answers now, send those questions to a person, and pull the logs to see who else got this answer",
+       "sub": "",
+       "tag": "Contained and sized",
+       "to": "d2"
+      }
+     ],
+     "prompt": "**9:30 am Meeting:** \nArjun: \"So what do we do - right now?\"",
+     "scene": "conflict",
+     "step": 3,
+     "type": "choice"
+    },
+    "d2": {
+     "choices": [
+      {
+       "chip": "Voucher",
+       "consequence": {
+        "lesson": "The voucher looked like the end of it, and it cost almost nothing today. But it answered the wrong question. Meera did not want goodwill - she wanted SkyBridge to stand behind what SkyBridge told her. And the impacted 41 users were always going to find each other.",
+        "scene": "storm",
+        "text": "**Consequences:**\n- The voucher email goes out at 5:40 pm. \n- At 5:55 Meera posts that too: \"A ₹2,000 voucher from the airline whose bot cost me ₹14,200.\" \n- At 6:15 a second customer replies under her post with his own screenshot \n- same answer, word for word. \n- By 8 pm a journalist from a travel site has emailed CX with a simple question: how many other customers got this answer? \n- Arjun forwards it to you with one line: \"What do we say?\"",
+        "title": "6:15 pm, the reply under the reply"
+       },
+       "k": "A",
+       "label": "Go with Farah - a voucher for Meera, and close the ticket (Impact = ₹2,000)",
+       "sub": "",
+       "tag": "Voucher and close",
+       "to": "write"
+      },
+      {
+       "chip": "Meera only",
+       "consequence": {
+        "lesson": "This felt fair, and it was fair - to one person. You paid the customer with the loudest voice and left the others with the same promise and the same loss. Putting things right only for whoever complains is not a policy. It is a queue.",
+        "scene": "storm",
+        "text": "**Consequences:** \n- Meera's refund lands on Tuesday morning. \n- She posts a short thank-you and the thread cools down. \n- Arjun is relieved. \n- Meanwhile two of the other 41 have already filed their own claims, and on Tuesday afternoon both get the standard rejection. The same response Meera got. \n- One of them has seen Meera's thank-you post.",
+        "title": "One customer happy, forty waiting"
+       },
+       "k": "B",
+       "label": "Refund Meera in full, quietly, and leave the other 41 alone (Impact = ₹14,200)",
+       "sub": "",
+       "tag": "Meera only",
+       "to": "write"
+      },
+      {
+       "chip": "All 41",
+       "consequence": {
+        "good": true,
+        "lesson": "If the bot is on your site, its words are your words. Whether to put it right is a business decision, and it was never Farah's alone to make. Also notice what you did not do: you did not wait for the other 40 to find out on social media. Hence avoiding probable future disaster",
+        "scene": "team",
+        "text": "**Consequences:** \n- You say it plainly on the call: the assistant is on our booking site, under our name, so its answer was our answer. All 41 get the difference refunded, and they hear it from SkyBridge first. And we shall communicate with approved verbiage from Finance and Legal as money is involved.\n- Farah pushes back hard on admitting anything, then agrees to draft the wording: \"I'll write it. I'm not agreeing to paying all of them yet.\" \n- Arjun says it is his budget and he will decide on Wednesday. He wants your recommendation in writing.",
+        "title": "Farah takes the pen, not the decision"
+       },
+       "k": "C",
+       "label": "Proactively contact and refund all the 41 impacted users before they raise their voice. (Impact = ₹5,80,000)",
+       "sub": "",
+       "tag": "Honour all 41",
+       "to": "write"
+      }
+     ],
+     "prompt": "**Monday, 4 pm.** \n- The logs are in: in ten weeks, 214 chats gave the 60-day claim window, 41 of those customers booked at the normal fare. \n- The sum of refundable booking amount for these cases is ₹5,80,000\n- Arjun has a review on Wednesday and wants a position from you tonight. \n- Farah: \"Offer Meera a ₹2,000 voucher as goodwill and close the ticket. No admission. The rest haven't complained.\" \n\n**What position do you take?**",
+     "scene": "conflict",
+     "step": 4,
+     "type": "choice"
+    },
+    "intro": {
+     "eyebrow": "Before you start",
+     "media": [],
+     "scene": "ai",
+     "step": 0,
+     "text": "- **SkyBridge Air** is a global aviation carrier and booking platform offering scheduled passenger flights across domestic and international routes. \n- It provides standardized ticketing, multi-class cabin options, and direct itinerary management for individual and corporate travelers.\n\n**You are the associate product manager** for the SkyBridge Air booking assistant - the AI chat on the booking site that answers fare, baggage and seat questions.\n\nIt **went live in mid-July and now handles about 2,500 chats a day**, mostly seat changes and baggage allowances. The call centre has noticed the difference. You own the assistant day to day. It was your first launch here, and you are rather proud of it.\n\n**Note:** SkyBridge Air, the people and the numbers are made up. ",
+     "title": "What is this scenario about?",
+     "to": "brief",
+     "type": "narrative"
+    },
+    "monday": {
+     "blocks": [
+      {
+       "alt": "Meera's post about the fare, with the assistant's reply",
+       "at": "top",
+       "caption": "",
+       "src": "https://gsj24983.github.io/puppeteer-sbl/images/user%20tweet.png",
+       "type": "image"
+      }
+     ],
+     "eyebrow": "The Complaint",
+     "media": [],
+     "scene": "ai",
+     "step": 1,
+     "text": "Arjun drops this screenshot into the team channel with one line: \n\n- **Arjun:** \"Let's tackle this ASAP.\"\n\n- **Farah:** \"The bot links to the policy page. The policy is clear. She should have read it.\"\n\n- **Vikram:** \"Let's fix the prompt in an hour.\"\n\n- **Arjun:** \"Meeting in 5 mins to respond to her by lunch. Let's also hear what product has to say about this\"",
+     "title": "Monday, 9:10 am",
+     "to": "see",
+     "type": "narrative"
+    },
+    "see": {
+     "correct": [
+      0,
+      1,
+      2
+     ],
+     "missNote": "You are still missing: ",
+     "options": [
+      {
+       "label": "The assistant made a specific promise - a claim window - in SkyBridge's name",
+       "why": "This matters because you own the Assistant and hence you own its claims"
+      },
+      {
+       "label": "The assistant's answer and the policy page disagree, so they are not coming from the same source",
+       "why": "This matters because it is a logical inference from the symptom"
+      },
+      {
+       "label": "If it gave Meera this answer, it has probably given it to other people too",
+       "why": "This matters because  it defines the impact radius"
+      },
+      {
+       "label": "The assistant linked to the policy page, so Meera had the right information in front of her",
+       "why": "A link under the answer does not cancel the answer above it"
+      },
+      {
+       "label": "The post is spreading fast, so the speed of the public backlash is the main problem",
+       "why": "Speed matters, but you cannot answer well before you know how many others got impacted"
+      },
+      {
+       "label": "The prompt needs better wording",
+       "why": "The wording is a symptom; it might be the quick fix but not the right solution without understanding impact and root cause"
+      }
+     ],
+     "prompt": "**Ten minutes before the call**: \nWhat are the critical pieces of information to be focused on from the screenshot?",
+     "scene": "matrix",
+     "step": 2,
+     "successNote": "Right. The assistant made a promise in SkyBridge's name, it is not reading the page it links to, and anything it said to one user it has probably said to others as well. The other three sound true, and they are exactly what the channel is already talking about. A link underneath does not cancel the answer above it, the speed of the backlash is not the problem, and the prompt wording is a symptom.",
+     "to": "d1",
+     "type": "multi"
+    },
+    "write": {
+     "coachLead": "To get this past Farah, ",
+     "context": [
+      {
+       "label": "What Arjun asked for",
+       "text": "Four sentences to him and Farah before Wednesday's CX review: what you recommend, and why. Farah will read it first."
+      }
+     ],
+     "criteria": [
+      {
+       "coach": "say plainly that the assistant's answer was SkyBridge's promise and that Meera is not the only one - the logs found 214 chats and 41 bookings, and a note that treats this as one complaint is the note that ends in 'an isolated case'",
+       "hint": "promise made, not one customer",
+       "keywords": [
+        "our promise",
+        "we promised",
+        "a promise",
+        "made a promise",
+        "promised her",
+        "promised them",
+        "commitment",
+        "committed us",
+        "our answer",
+        "our words",
+        "its words",
+        "speaks for us",
+        "on our site",
+        "on our website",
+        "on our booking site",
+        "under our name",
+        "in our name",
+        "we told her",
+        "we told them",
+        "not one customer",
+        "not a one off",
+        "not an isolated",
+        "not isolated",
+        "other customers",
+        "same answer",
+        "41 customers",
+        "41 people",
+        "41 bookings",
+        "all 41",
+        "the 41",
+        "other 41",
+        "other 40",
+        "214"
+       ],
+       "label": "Names the cue: the assistant made a promise in SkyBridge's name, and this is not one customer"
+      },
+      {
+       "coach": "say why it happened - the assistant answers from the knowledge pack built in June, before Farah tightened the rules in August, so it was quoting the old rule while linking to the new page, and a prompt patch does nothing about that",
+       "hint": "wrong source, not a bad prompt",
+       "keywords": [
+        "knowledge pack",
+        "old rule",
+        "old rules",
+        "old policy",
+        "old fare rule",
+        "old help centre",
+        "old help center",
+        "out of date",
+        "outdated",
+        "stale",
+        "before the august",
+        "august change",
+        "august rewrite",
+        "august update",
+        "rule change",
+        "since august",
+        "never refreshed",
+        "not refreshed",
+        "never updated",
+        "different source",
+        "two sources",
+        "source of truth",
+        "not the policy page",
+        "not reading the policy",
+        "isn t reading the policy",
+        "doesn t read the policy",
+        "not reading the page",
+        "not a prompt problem",
+        "not a bad prompt",
+        "not just the prompt",
+        "not the prompt",
+        "prompt won t fix",
+        "prompt doesn t fix"
+       ],
+       "label": "Names the real problem: the assistant answers from a different source than the policy page, not a bad prompt"
+      },
+      {
+       "coach": "put the voucher route next to yours and say why it fails - it only stays cheap for as long as the other 40 never see Meera's post, and that post had 1,800 reposts by Monday morning",
+       "hint": "the voucher route and why it fails",
+       "keywords": [
+        "voucher route",
+        "voucher option",
+        "the voucher would",
+        "the voucher looks",
+        "voucher looks",
+        "voucher is cheaper",
+        "voucher only",
+        "voucher saves",
+        "voucher costs",
+        "voucher fails",
+        "voucher won t",
+        "voucher doesn t",
+        "voucher leaves",
+        "instead of the voucher",
+        "instead of a voucher",
+        "rather than a voucher",
+        "rather than the voucher",
+        "than the voucher",
+        "looks cheaper",
+        "cheaper today",
+        "cheaper now",
+        "cheaper on paper",
+        "if we do nothing",
+        "doing nothing",
+        "do nothing",
+        "two options",
+        "other option",
+        "alternative",
+        "versus",
+        "compared with",
+        "compared to"
+       ],
+       "label": "Puts at least two options side by side, including the voucher route or doing nothing, and says why that one fails"
+      },
+      {
+       "coach": "recommend honouring all 41 and put a number on it - about ₹5.8 lakh against Farah's ₹2,000 voucher - with the best and the worst case, because Arjun decides on Wednesday and a recommendation without a cost is one he cannot sign",
+       "hint": "honour all 41, cost, best and worst case",
+       "keywords": [
+        "honour the",
+        "honour all",
+        "honour what",
+        "honour its",
+        "honour it",
+        "honor the",
+        "honor all",
+        "honor what",
+        "honor it",
+        "refund all",
+        "refund the 41",
+        "refund every",
+        "refund them all",
+        "pay all 41",
+        "pay the 41",
+        "pay the difference",
+        "refund the difference",
+        "make it right for all",
+        "5 8 lakh",
+        "5 82 lakh",
+        "5 8l",
+        "582",
+        "lakh",
+        "best case",
+        "worst case",
+        "at best",
+        "at worst",
+        "total cost"
+       ],
+       "label": "Recommends honouring all 41, with the cost stated and the best and worst case"
+      },
+      {
+       "coach": "close with who does what by when - Farah on the wording, a date for the relaunch limits, and when you will update them next, because Arjun decides on Wednesday and the 41 should hear from SkyBridge before they hear from each other",
+       "hint": "wording, relaunch date, next update",
+       "keywords": [
+        "wording",
+        "farah drafts",
+        "farah to draft",
+        "farah writes",
+        "farah owns",
+        "legal drafts",
+        "legal owns",
+        "legal writes",
+        "relaunch",
+        "re launch",
+        "back on",
+        "go live",
+        "switch back on",
+        "next update",
+        "update you",
+        "update both",
+        "update by",
+        "i ll update",
+        "will update",
+        "report back",
+        "weekly review",
+        "flagged chats",
+        "by monday",
+        "by tuesday",
+        "by wednesday",
+        "by thursday",
+        "by friday",
+        "by end of",
+        "two weeks from"
+       ],
+       "label": "Plans the follow-through: Finance and legal owns the wording, a date for the relaunch limits, and a promised next update"
+      }
+     ],
+     "eyebrow": "Tuesday, 6 pm",
+     "model": "Arjun, Farah - \n\nI recommend we honour the assistant's answer for all 41 customers who booked. Refund the difference (about ₹5.8 lakh in total) and contact them before they contact us. Farah finalizes the wording with legal. \n\nThe assistant sits on our booking site under our name, so its 60-day answer was our promise. 214 chats got it because it still answers from the old knowledge pack from before the August rule change, not the policy page - so this is not one customer and not a prompt problem. \n\nThe voucher route looks cheaper today, but if we do nothing more the other 40 will find Meera's post and a journalist will get the numbers from someone else: in the worst case we pay the same ₹5.8 lakh anyway as a public correction and lose the assistant for weeks, and in the best case on my route we pay once and the story is that we found it and fixed it. \n\nFare and policy answers stay with people until the assistant quotes the policy page and hands money questions to a person, with a relaunch two weeks from Monday, and I will update you both on the 41 contacts by Thursday 6 pm.",
+     "modelExplain": "This does five things. It <b>names the promise and the scale</b> (our site, our name, 214 chats). It <b>names the real cause</b> - the old knowledge pack, not the prompt. It <b>puts the voucher route next to yours and says why it fails</b>. It <b>recommends honouring all 41 with the cost and the best and worst case</b>. And it <b>closes with who does what by when</b> - Farah on the wording, a relaunch date, the next update. Notice it never says Meera should have read the page. Edit it, or submit it as it stands to see the grade.",
+     "pass": 5,
+     "passNote": "Promise, cause, options, cost and follow-through. Farah can still disagree, but she cannot say she was not told.",
+     "placeholder": "Arjun, Farah - my recommendation for Wednesday...",
+     "question": "If we refund Meera in full, we lose ₹14,200. If we refund all 41, we admit liability to all and end up paying around ₹5,80,000. \n\nConvince me this is cheaper than the voucher or even the full refund to Meera.",
+     "scene": "office",
+     "speaker": "Farah, Financial advisor",
+     "step": 5,
+     "title": "Four sentences to Arjun and Farah",
+     "toFail": "partial",
+     "toPass": "good",
+     "type": "evaluate"
+    }
+   },
+   "start": "intro",
+   "steps": [
+    "What it is about",
+    "Briefing",
+    "What you are seeing",
+    "The first hour",
+    "The decision under pressue",
+    "Write to Farah",
+    "Debrief"
+   ],
+   "tag": "AI in product",
+   "thumb": "ai",
+   "title": "The compassion fare"
+  }
+ ]
+};
 var VIEW = /*__VIEW__*/'trainee'/*__VIEWEND__*/;  /* 'trainer' shows trap/expert tags, reveals and trainer notes */
+var DEFAULT_EMAIL = 'swanubhava.by.gsj@gmail.com';  /* v0.4: where 'Send by email' goes when the deck sets no sendTo.email */
 
 /* ---------------------------- scene library ---------------------------- */
 var C={indigo:'var(--indigo)',deep:'var(--deep)',surf:'var(--surface)',surf2:'var(--surf2)',
@@ -447,7 +940,7 @@ function pillarOf(s){return s.pillar||PILLAR_OF[String(anchorOf(s)).trim().toLow
 /* ---------------------------- run ---------------------------- */
 function start(id){
   var s=byId(id);if(!s)return;
-  S={sc:id,node:null,chips:{},log:[],disabled:{},ending:null,story:[],tries:{},hist:[],here:null,inCq:null};
+  S={sc:id,node:null,chips:{},log:[],disabled:{},ending:null,story:[],tries:{},hist:[],here:null,inCq:null,seed:Math.floor(Math.random()*1e6)};
   document.getElementById('railTitle').textContent=s.title;
   document.getElementById('railKicker').textContent=
     anchorOf(s)?(anchorOf(s)+(s.kicker?' - '+s.kicker:'')):(s.kicker||'');
@@ -711,7 +1204,7 @@ function joinCoach(a){
   if(a.length===1)return a[0];
   return a.slice(0,-1).join('; ')+'; and '+a[a.length-1];
 }
-/* redFlags: a talking point for the facilitator. Shown inside the folded rubric (press e), never graded. */
+/* redFlags: a talking point for the facilitator. Shown inside the folded rubric (Rubric button, trainer view), never graded. */
 function redFlagsOf(n){
   var r=n.redFlags;if(!r)return null;
   if(Array.isArray(r))r={phrases:r};
@@ -724,18 +1217,21 @@ function redLineHTML(n){
 }
 function maxTries(n){var m=parseInt(n.tries||DATA.tries||3,10);return m>0?m:3;}
 function renderEvaluate(n,nodeId){
-  var expand=n.showRubric===true||isTrainer();
+  /* v0.5: the Rubric button is trainer-only, and the rubric starts folded so the trainer chooses when to reveal it.
+     showRubric:true (a rubric-teaching scenario) shows it to everyone, open. */
+  var rubBtn=isTrainer()||n.showRubric===true,expand=n.showRubric===true;
+  var tapTxt=rubBtn?' - tap Rubric to show them':'';
   var tries=S.tries[nodeId]||0,max=maxTries(n);
   S.drafts=S.drafts||{};
   var ask=n.speaker
     ? '<div class="vpq"><b>'+esc(n.speaker)+'</b>&ldquo;'+fmt(n.question||n.prompt)+'&rdquo;</div>'
     : '<div class="prompt">'+fmt(n.question||n.prompt)+'</div>';
   var head=n.speaker
-    ? '<div class="phead"><span style="flex:1"></span>'+affBar(n,n.criteria.length)+'</div>'+ask
-    : '<div class="phead">'+ask+affBar(n,n.criteria.length)+'</div>';
+    ? '<div class="phead"><span style="flex:1"></span>'+affBar(n,rubBtn?n.criteria.length:0)+'</div>'+ask
+    : '<div class="phead">'+ask+affBar(n,rubBtn?n.criteria.length:0)+'</div>';
   var body=head+ctxHTML(n)+mediaHTML(n.media)+
     '<textarea id="ans" placeholder="'+esc(n.placeholder||'Write your answer. Two or three sentences is enough.')+'">'+esc(S.drafts[nodeId]||'')+'</textarea>'+
-    '<div class="rubwrap"><div class="rlab" id="rlab">'+n.criteria.length+' criteria - tap Rubric to show them</div>'+
+    '<div class="rubwrap"><div class="rlab" id="rlab">'+(rubBtn?n.criteria.length+' criteria'+tapTxt:'Graded against '+n.criteria.length+' criteria')+'</div>'+
     '<div class="rubric'+(expand?'':' folded')+'" id="rub">'+n.criteria.map(function(c){
       return '<div class="crit"><span class="mk"></span><span>'+esc(c.label)+'</span></div>';}).join('')+redLineHTML(n)+'</div></div>'+
     '<div class="linkrow"><button class="primary" id="sub" style="margin-top:0">Submit for grading'+(max>1?' (attempt '+(tries+1)+' of '+max+')':'')+'</button>'+
@@ -745,7 +1241,7 @@ function renderEvaluate(n,nodeId){
   wireAff(n);
   if(expand){var eb=document.getElementById('eBtn');if(eb)eb.classList.add('on');}
   if(tries)document.getElementById('rlab').textContent=
-    'Attempt '+(tries+1)+' of '+max+' - '+n.criteria.length+' criteria, tap Rubric to show them';
+    'Attempt '+(tries+1)+' of '+max+' - '+n.criteria.length+' criteria'+(rubBtn?', tap Rubric to show them':'');
 
   var mb=document.getElementById('modelBtn');
   if(mb)mb.addEventListener('click',function(){
@@ -783,7 +1279,7 @@ function revealGrade(n,nodeId,txt){
   var tries=S.tries[nodeId],left=Math.max(0,maxTries(n)-tries),miss=total-res.score;
   if(typeof n.step==='number')S.chips[n.step]=res.score+'/'+total;
   document.getElementById('rlab').textContent=
-    res.score+' of '+total+' criteria met - tap Rubric to see which';
+    res.score+' of '+total+' criteria met'+((isTrainer()||n.showRubric===true)?' - tap Rubric to see which':'');
 
   var fb;
   if(pass){fb=n.passNote||'Every criterion covered.';}
@@ -828,7 +1324,7 @@ function showEnding(key,e){
     (rev?'<ul class="revealed">'+rev+'</ul>':'')+
     mediaHTML(e.media)+
     '<details class="pathbox"><summary>See your path - every decision and what it led to</summary>'+pathHTML(key,e)+'</details>'+
-    sendHTML()+
+    cardHTML()+sendHTML()+
     '<button class="ghost" id="again" style="margin-left:0">Run it again</button>',null,affBar(e,0));
   wireAff(e);wireSend(key,e);
   document.getElementById('again').addEventListener('click',function(){start(S.sc);});
@@ -873,7 +1369,7 @@ function sessionSummary(endKey,e){
 /* ---------------------------- v0.3: send to trainer ---------------------------- */
 function b64(s){try{return btoa(unescape(encodeURIComponent(s))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}catch(x){return '';}}
 function resultObj(endKey,name){var s=byId(S.sc);
-  return {v:2,s:s.id,t:s.title,n:name||'',at:new Date().toISOString(),end:endKey,
+  return {v:2,s:s.id,t:s.title,n:name||'',at:new Date().toISOString(),end:endKey,r:S.seed,
     log:S.log.map(function(l){
       if(l.kind==='choice')return {k:'c',n:l.node,i:l.i,g:l.gated?1:0};
       if(l.kind==='multi')return {k:'m',n:l.node,sel:l.sel||[]};
@@ -882,26 +1378,65 @@ function resultObj(endKey,name){var s=byId(S.sc);
       return null;}).filter(Boolean)};}
 function resultCode(endKey,name){return 'PUP2:'+b64(JSON.stringify(resultObj(endKey,name)));}
 function savedName(){try{return localStorage.getItem('pup-name')||'';}catch(x){return '';}}
-function sendHTML(){var to=DATA.sendTo||{};
+function sendEmail(){var to=DATA.sendTo||{};return String(to.email||'').trim()||DEFAULT_EMAIL;}
+function sendHTML(){
   return '<div class="send"><h3>Send your result to your trainer</h3>'+
     '<p>Your trainer sees your choices and what you wrote. In class, answers are shown without names.</p>'+
     '<label for="lname">Your name</label><input id="lname" autocomplete="given-name" value="'+esc(savedName()).replace(/"/g,'&quot;')+'">'+
     '<p class="sm" id="consent">By sending this, you agree that Gaurav Joshi sees your name, choices and written answers to give you feedback. Your name is optional.</p>'+
-    '<div class="row"><a class="sbtn" id="sendMail" href="#">Send by email</a>'+
+    '<div class="row"><a class="sbtn" id="sendGmail" href="#" target="_blank" rel="noopener">Send with Gmail</a>'+
+    '<a class="sbtn alt" id="sendOutlook" href="#" target="_blank" rel="noopener">Send with Outlook</a>'+
+    '<a class="sbtn alt" id="sendMail" href="#">Mail app</a>'+
     '<button class="sbtn alt" id="sendCopy">Copy result</button>'+
     '<button class="sbtn alt" id="saveRep">Save my report</button></div>'+
-    '<p class="sm" style="margin-top:8px">The report has your path as a diagram, what each choice led to, and why.</p>'+
-    '</div>';}
-function sendText(endKey,e,name){return sessionSummary(endKey,e)+'\n\nResult code for your trainer:\n'+resultCode(endKey,name);}
+    '<p class="sm" style="margin-top:8px">Email goes to '+esc(sendEmail())+'. Gmail and Outlook open in your browser with the email written for you; your result is copied as well, so if the email comes up empty, paste it in. Nothing works? Tap Copy result and send it however you like.</p>'+
+    '<p class="sm">The report has your path as a diagram, what each choice led to, and why.</p></div>';}
+function sendText(endKey,e,name){var c=cardCode(endKey,name);
+  return sessionSummary(endKey,e)+'\n\nResult code for your trainer:\n'+resultCode(endKey,name)+(c?'\n\nYour persona card code:\n'+c:'');}
+/* ---------------------------- v0.5: persona card ----------------------------
+   Indicative bands from this run, for the public card page. The card code carries the scenario, the anchor number,
+   the bands and the learner's name (they can switch it off on the card page) - never their choices or written answers. */
+var CARD_URL='https://gsj24983.github.io/swanubhava-play/card.html';
+var ANCHOR_NO={'acts with integrity under pressure':1,"embodies a learner's mindset":2,'strives for clarity and outcomes':3,
+ 'builds trust and psychological safety':4,'stays present and grounded under ambiguity':5,'listens beyond the ask to uncover the need':6,
+ 'challenges assumptions, reframes and holds a point of view':7,'converts insight into owned outcomes':8};
+function bandOf(f){return f==null?null:f>=0.85?4:f>=0.6?3:f>=0.35?2:1;}
+function cardData(){var s=byId(S.sc),no=ANCHOR_NO[String(anchorOf(s)).trim().toLowerCase()];if(!no)return null;
+  var nodes=s.nodes||{},first={},dec=[],notc=[],say=[];
+  S.log.forEach(function(l){if(l.kind==='choice'&&!(l.node in first))first[l.node]=l;});
+  Object.keys(first).forEach(function(k){var n=nodes[k],c=n&&n.choices&&n.choices[first[k].i];if(!c)return;var g=choiceGood(n,c);if(g!==null)dec.push(g?1:0);});
+  S.log.forEach(function(l){var n=nodes[l.node];if(!n)return;
+    if(l.kind==='multi'){var need=n.correct||[],sel=l.sel||[],hit=0,ex=0;sel.forEach(function(i){need.indexOf(i)>-1?hit++:ex++;});
+      if(need.length)notc.push(Math.max(0,Math.min(1,(hit-ex)/need.length)));}
+    if(l.kind==='written'){var m=l.met||[];if(m.length)say.push(m.filter(Boolean).length/m.length);}});
+  var avg=function(a){return a.length?a.reduce(function(x,y){return x+y;},0)/a.length:null;};
+  var fn=avg(notc),fd=avg(dec),fw=avg(say),all=[fn,fd,fw].filter(function(x){return x!=null;});
+  if(!all.length)return null;
+  return {v:1,s:s.id,t:s.title,a:no,b:[bandOf(fn),bandOf(fd),bandOf(fw)],o:bandOf(avg(all)),r:S.seed||0,d:new Date().toISOString().slice(0,10)};}
+function cardCode(endKey,name){var c=cardData();if(!c)return '';c.n=name||'';return 'CARD1:'+b64(JSON.stringify(c));}
+function cardUrl(name){var c=cardCode(null,name);return c?(DATA.cardUrl||CARD_URL)+'#c='+c.slice(6):'';}
+function cardHTML(){if(!cardData())return '';
+  return '<div class="send pcard"><h3>Make your persona card</h3>'+
+    '<p>See which Swanubhava&trade; persona this run brought out, and share the card if you like. It shows your name, the scenario and indicative bands - never your answers. You can take your name off on the card page.</p>'+
+    '<div class="row"><a class="sbtn" id="cardGo" href="#" target="_blank" rel="noopener">Make my persona card</a></div>'+
+    '<p class="sm"><b>Send your result to your trainer below for your full Swanubhava Revelation.</b></p></div>';}
 function copyText(t,done){var fb=function(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
     try{document.execCommand('copy');}catch(x){}document.body.removeChild(ta);done();};
   try{if(navigator.clipboard)navigator.clipboard.writeText(t).then(done,fb);else fb();}catch(x){fb();}}
-function wireSend(endKey,e){var to=DATA.sendTo||{},inp=document.getElementById('lname');if(!inp)return;
+function wireSend(endKey,e){var inp=document.getElementById('lname');if(!inp)return;
   function upd(){var nm=inp.value.trim();try{localStorage.setItem('pup-name',nm);}catch(x){}
     var t=sendText(endKey,e,nm);
-    document.getElementById('sendMail').href='mailto:'+encodeURIComponent(to.email||'swanubhava.by.gsj@gmail.com')+'?subject='+
-      encodeURIComponent('Puppeteer result - '+byId(S.sc).title+(nm?' - '+nm:''))+'&body='+encodeURIComponent(t);}
+    /* v0.5: mailto needs a mail app set as the default, and on many laptops there is none (the browser then asks
+       which app to open, and a browser opens blank). Gmail and Outlook on the web need only a browser. */
+    var to=encodeURIComponent(sendEmail()),su=encodeURIComponent('Puppeteer result - '+byId(S.sc).title+(nm?' - '+nm:'')),bo=encodeURIComponent(t);
+    document.getElementById('sendGmail').href='https://mail.google.com/mail/?view=cm&fs=1&to='+to+'&su='+su+'&body='+bo;
+    document.getElementById('sendOutlook').href='https://outlook.office.com/mail/deeplink/compose?to='+to+'&subject='+su+'&body='+bo;
+    document.getElementById('sendMail').href='mailto:'+to+'?subject='+su+'&body='+bo;
+    var cg=document.getElementById('cardGo');if(cg)cg.href=cardUrl(nm);}
   inp.addEventListener('input',upd);upd();
+  /* every send also copies the result, so a mail page that drops a long body is one paste away */
+  ['sendGmail','sendOutlook','sendMail'].forEach(function(id){document.getElementById(id).addEventListener('click',function(){
+    copyText(sendText(endKey,e,inp.value.trim()),function(){var c=document.getElementById('sendCopy');if(c)c.textContent='Copied too';});});});
   document.getElementById('sendCopy').addEventListener('click',function(){var b=this;
     copyText(sendText(endKey,e,inp.value.trim()),function(){b.textContent='Copied';});});
   document.getElementById('saveRep').addEventListener('click',function(){var b=this;

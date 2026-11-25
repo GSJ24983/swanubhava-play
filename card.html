@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Swanubhava&trade; - your persona card</title>
+<meta name="theme-color" content="#221830">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,500&family=Instrument+Sans:wght@400;600;700&display=swap">
+<style>
+/* VOICE: a collectible, proud but honest - bands are indicative, never a grade.
+   IDEA: a trading card pulled from a pack; the page is the pack-opening table.
+   PICTURE: the card itself, drawn on canvas so what you see is the PNG you share.
+   COLOUR and TYPE: the play site's plum and paper around the card; each anchor owns one colour; Fraunces on the card, Schibsted on the page.
+   LAYOUT: card first, then name and share controls, then what it means, then the collection. */
+@font-face{font-family:"Schibsted Grotesk";src:url(https://gsj24983.github.io/swanubhava/fonts/schibsted-grotesk.woff2) format("woff2");font-weight:400 900;font-display:swap}
+@font-face{font-family:"Tiro Devanagari Marathi";src:url(https://gsj24983.github.io/swanubhava/fonts/tiro-devanagari-marathi-swanubhava.woff2) format("woff2");font-weight:400;font-display:swap}
+:root{--paper:#ECE9F0;--paper-2:#F7F5FA;--ink:#1D1726;--ink-soft:#574F63;--line:#D8D2E1;--rule:#CEC7D8;
+ --plum-deep:#221830;--accent:#5B2A7A;--on-dark:#F2EEF7;--on-dark-soft:#BDB2CC;--accent-on-dark:#D9CBEA;
+ --sans:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;--anchor:#F2C14E}
+*{box-sizing:border-box;min-width:0}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;overflow-x:clip}
+a{color:var(--accent)}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px}
+.hero{background:var(--plum-deep);color:var(--on-dark);padding:30px 0 120px}
+.brand{display:flex;align-items:baseline;gap:10px;margin-bottom:18px}
+.deva{font-family:"Tiro Devanagari Marathi",serif;color:var(--accent-on-dark);font-size:30px;line-height:1}
+.brand .nm{font-size:14px;font-weight:600;color:var(--on-dark-soft)}
+h1{font-size:clamp(26px,6.4vw,38px);line-height:1.1;font-weight:700;letter-spacing:-.02em;margin:0}
+.sub{font-size:16.5px;color:var(--on-dark-soft);margin:10px 0 0;max-width:44ch}
+main{flex:1}
+.stage{margin-top:-100px}
+#card{display:block;width:100%;max-width:540px;margin:0 auto;aspect-ratio:4/5;border-radius:14px;box-shadow:0 30px 60px -30px rgba(29,23,38,.7);background:#0E0B1F}
+.panel{background:var(--paper-2);border:1px solid var(--rule);border-radius:10px;padding:18px 18px 16px;margin-top:18px}
+.panel h2{font-size:19px;margin:0 0 4px;letter-spacing:-.01em}
+.panel p{margin:6px 0 0;color:var(--ink-soft);font-size:15px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}
+label.chk{display:flex;gap:9px;align-items:center;font-weight:600;min-height:44px;cursor:pointer}
+label.chk input{width:20px;height:20px;accent-color:var(--accent)}
+input[type=text],textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--rule);border-radius:8px;padding:10px 12px}
+textarea{min-height:120px;resize:vertical;line-height:1.5}
+input:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.btn{font:inherit;font-weight:700;font-size:15px;min-height:44px;padding:10px 16px;border-radius:6px;border:1px solid var(--ink);background:var(--paper-2);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn.go{background:var(--ink);color:var(--on-dark)}
+.btn.go:hover{background:var(--accent);border-color:var(--accent)}
+.btn:hover{border-color:var(--accent)}
+.note{margin-top:18px;padding:14px 16px;border-radius:10px;background:var(--plum-deep);color:var(--on-dark);font-size:15.5px}
+.note b{color:#fff}
+.mean{border-left:4px solid var(--anchor)}
+.small{font-size:13px;color:var(--ink-soft)}
+.msg{font-size:14px;color:var(--accent);font-weight:600;min-height:1.4em;margin-top:8px}
+.coll{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:12px}
+.tile{border-radius:9px;padding:10px 12px;background:#15112B;color:#F3F0FF;border-top:5px solid var(--c);font-size:13px;line-height:1.35}
+.tile b{display:block;font-family:Fraunces,Georgia,serif;font-size:15.5px;margin-bottom:2px}
+.tile span{color:#BDB2CC}
+.empty{text-align:center;padding:28px 18px}
+footer{border-top:1px solid var(--line);padding:18px 0 26px;font-size:13px;color:var(--ink-soft);margin-top:36px}
+footer a{color:var(--ink);font-weight:600;text-decoration:none}
+.hidden{display:none!important}
+@media(prefers-reduced-motion:no-preference){#card.deal{animation:deal .6s cubic-bezier(.2,.8,.2,1) both}}
+@keyframes deal{from{opacity:0;transform:translateY(24px) rotate(-2deg) scale(.96)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <div class="brand"><span class="deva" lang="mr">स्वानुभव</span><span class="nm">Swanubhava&trade; persona cards</span></div>
+  <h1 id="heroTitle">Your persona card</h1>
+  <p class="sub" id="heroSub">Every scenario you play brings out a persona. Collect them, and share the ones you are proud of.</p>
+</div></header>
+
+<main><div class="wrap">
+  <div class="stage">
+    <canvas id="card" width="1080" height="1350" role="img" aria-label="Your persona card"></canvas>
+  </div>
+
+  <section class="panel hidden" id="pasteBox">
+    <h2>Make your card</h2>
+    <p>Finished a Swanubhava&trade; scenario? Tap <b>Make my persona card</b> on its last screen, or paste the result you copied there.</p>
+    <label class="small" for="pasteIn" style="display:block;margin-top:10px">Your copied result, or a card code</label>
+    <textarea id="pasteIn" spellcheck="false" placeholder="Paste here - the whole copied result is fine"></textarea>
+    <div class="row"><button class="btn go" id="pasteGo" type="button">Make my card</button></div>
+    <p class="msg" id="pasteMsg" role="status"></p>
+  </section>
+
+  <section class="panel hidden" id="ctlBox">
+    <h2>Your name on the card</h2>
+    <label class="chk"><input type="checkbox" id="showName" checked> Show my name</label>
+    <label class="small" for="nameIn">Name</label>
+    <input type="text" id="nameIn" autocomplete="given-name" maxlength="28">
+    <h2 style="margin-top:18px">Share it</h2>
+    <p>On a phone, Share sends the card straight to LinkedIn or anywhere else. On a laptop, download the card, then open LinkedIn - the text is filled in for you, and you add the picture.</p>
+    <div class="row">
+      <button class="btn go hidden" id="shareBtn" type="button">Share</button>
+      <button class="btn go" id="dlBtn" type="button">Download card</button>
+      <button class="btn" id="liBtn" type="button">Open LinkedIn</button>
+      <button class="btn" id="copyBtn" type="button">Copy text</button>
+    </div>
+    <label class="small" for="shareText" style="display:block;margin-top:12px">Text to post (edit it as you like)</label>
+    <textarea id="shareText"></textarea>
+    <p class="msg" id="shareMsg" role="status"></p>
+  </section>
+
+  <section class="panel mean hidden" id="meanBox">
+    <h2 id="meanTitle"></h2>
+    <p id="meanText"></p>
+    <p id="bandText"></p>
+    <p class="small" style="margin-top:10px">Bands are indicative. They come from one run of one scenario - how you noticed, decided and put it into words that day - not a verdict on you.</p>
+  </section>
+
+  <p class="note hidden" id="trainerNote"><b>Want the full Swanubhava&trade; Revelation?</b> Send your result to your trainer from the last screen of the scenario. The detailed read of your decisions comes from them, not from this card.</p>
+
+  <section class="panel hidden" id="collBox">
+    <h2 id="collTitle">Your collection</h2>
+    <p class="small">Kept in this browser only. Nobody else can see it.</p>
+    <div class="coll" id="coll"></div>
+    <div class="row"><button class="btn" id="clearColl" type="button">Clear my collection</button></div>
+  </section>
+
+  <section class="more" style="margin-top:28px">
+    <a class="btn" href="index.html">Play a scenario &rarr;</a>
+  </section>
+</div></main>
+<footer><div class="wrap">
+  <div>Gaurav Joshi &middot; <a href="https://www.linkedin.com/in/gsjoshi/" target="_blank" rel="noopener">LinkedIn</a> &middot; Built with The Puppeteer</div>
+  <div style="margin-top:6px;font-size:12px">&copy; 2026 Gaurav Joshi. Swanubhava&trade; is a trademark of Gaurav Joshi. Your card is made in your browser; nothing is sent anywhere.</div>
+</div></footer>
+
+<script>
+{
+/* ==== PERSONA CORE - generated from studio/src/persona_core.js in puppeteer-authoring; edit it there, then run studio/sync_persona.py ==== */
+var PERSONA=(function(){
+/* ---------------- the persona bank ----------------
+   Eight anchors, one colour each; band names per pillar. Mottos complete 'I'm a ... when ...'. */
+const PILLARS={
+  ind:{name:'Individual posture',bands:['Ripple','Stream','River','Ocean']},
+  bnd:{name:'Boundary defining posture',bands:['Spark','Glow','Flame','Blaze']},
+  col:{name:'Collaboration posture',bands:['Seed','Sprout','Sapling','Oak']}
+};
+const SIGNS=['early signs','signs','clear signs','strong signs'];
+const WORDS=['Early signs','Emerging','Showing clearly','Showing strongly'];
+const ANCHORS={
+ 1:{p:'ind',c:'#F2C14E',deep:'#2A2210',name:'Acts with integrity under pressure',
+   means:'Someone who holds their principles even when circumstances make it difficult.',
+   of:'holding to the truth when the pressure was on',emb:'compass',
+   ps:[['The Steady Compass',"the pressure says 'just this once'"],['The Moral Anchor','the deadline wants me to bend the facts'],
+       ['The Unbending Reed','the room leans on me to say yes'],['The Quiet Oath','no one would ever find out'],
+       ['The Principle Keeper','the shortcut looks harmless'],['The Keel','the boss wants the status to be green'],
+       ['The Clean Ledger','the numbers would look better rounded up']]},
+ 2:{p:'ind',c:'#F5913E',deep:'#2B1A0E',name:"Embodies a learner's mindset",
+   means:'Someone who stays curious, embraces learning and remains open to being wrong.',
+   of:'staying open to being wrong and learning fast',emb:'lantern',
+   ps:[['The Open Notebook',"I'm the one who got it wrong"],['The Curious Cartographer','the map stops matching the ground'],
+       ['The Eternal Apprentice',"the junior knows something I don't"],['The Question Seeker',"I'm sure I already have the answer"],
+       ['The Growth Gardener','the feedback stings'],['The Lantern','nobody has walked this way before'],
+       ["The Beginner's Eye","'we've always done it this way' comes up"]]},
+ 3:{p:'bnd',c:'#FF6B4A',deep:'#2D1410',name:'Strives for clarity and outcomes',
+   means:'Someone who cuts through complexity, creates direction and makes things understandable.',
+   of:'turning a vague ask into something people can act on',emb:'lens',
+   ps:[['The Fog Cutter','the ask is vague and the date is not'],['The Clarity Architect','ten people mean ten different things'],
+       ['The North Star','the team is busy but not moving'],['The Signal Finder','the dashboard is all noise'],
+       ['The Plain Speaker','the spec could be read two ways'],['The Clear Lens','everyone nods too quickly'],
+       ['The Sharpener',"'improve the experience' is the whole brief"]]},
+ 4:{p:'col',c:'#16B5A4',deep:'#0C2623',name:'Builds trust and psychological safety',
+   means:'Someone who creates an environment where people feel heard, respected and safe to contribute.',
+   of:'making it safe for people to speak up',emb:'harbour',
+   ps:[['The Safe Harbour','someone brings bad news early'],['The Trust Weaver','two teams stop talking'],
+       ['The Open Door','the quietest person has a doubt'],['The Bridge Builder','sales and engineering are at odds'],
+       ['The Keeper of Space','the meeting needs room to disagree'],['The Campfire','the team needs to say what went wrong'],
+       ['The Shelter Builder','a mistake needs owning, not hiding']]},
+ 5:{p:'col',c:'#3D8BFD',deep:'#0E1A30',name:'Stays present and grounded under ambiguity',
+   means:'Someone who remains composed and helps others navigate uncertainty.',
+   of:'staying steady when the answer was not clear yet',emb:'lighthouse',
+   ps:[['The Still Water','the escalation lands at 6pm'],['The Lighthouse','things get ambiguous'],
+       ['The Grounded Oak','the plan changes for the third time'],['The Calm Navigator','nobody knows the answer yet'],
+       ['The Steady Horizon','the room starts to panic'],['The Calm Eye','everyone wants a decision right now']]},
+ 6:{p:'col',c:'#5CC46B',deep:'#10241A',name:'Listens beyond the ask to uncover the need',
+   means:"Someone who listens for what isn't being said and discovers the real problem behind the request.",
+   of:'hearing the need behind the request',emb:'ear',
+   ps:[['The Second Ear','the ask sounds simple'],['The Story Beneath',"the request isn't the real problem"],
+       ['The Need Detective','the customer asks for a feature'],['The Quiet Observer',"what's not said matters most"],
+       ['The Signal Listener','the complaint hides the need'],['The Deep Listener','the stakeholder just wants it done'],
+       ['The Echo Finder','I need to say it back before I solve it']]},
+ 7:{p:'bnd',c:'#E0457B',deep:'#2C0F1B',name:'Challenges assumptions, reframes and holds a point of view',
+   means:'Someone who respectfully questions accepted thinking and brings a different perspective.',
+   of:'questioning what everyone took for granted, and holding your view',emb:'mirror',
+   ps:[['The Reframer','the problem everyone is solving is the wrong one'],['The Loyal Dissenter','everyone agrees too quickly'],
+       ['The Mirror Turner','the assumption is our own'],['The Assumption Breaker',"'obviously' is doing all the work"],
+       ['The Constructive Contrarian','the room needs a second option'],['The Second Look','the decision was made in five minutes'],
+       ['The Question Smith',"nobody has asked 'what if we're wrong?'"]]},
+ 8:{p:'bnd',c:'#9B7BFF',deep:'#1C1533',name:'Converts insight into owned outcomes',
+   means:'Someone who turns ideas into action, takes accountability and ensures things get completed.',
+   of:'turning insight into something owned and finished',emb:'loop',
+   ps:[['The Finisher','the last ten percent is the hard part'],['The Promise Keeper',"I said 'I'll take it from here'"],
+       ['The Loop Closer','ideas need to become outcomes'],['The Spark-to-Fire','an insight needs an owner'],
+       ['The Outcome Architect','the plan has to survive Monday'],['The Bridge to Done','the work falls between two teams']]}
+};
+const TOTAL=Object.values(ANCHORS).reduce((n,a)=>n+a.ps.length,0);
+const STATS=['Noticing','Deciding','Saying it'];
+
+/* ---------------- reading a card code ---------------- */
+function unb64(c){try{let b=c.replace(/-/g,'+').replace(/_/g,'/');while(b.length%4)b+='=';return JSON.parse(decodeURIComponent(escape(atob(b))));}catch(x){return null;}}
+function valid(c){return c&&c.v===1&&ANCHORS[c.a]&&Array.isArray(c.b)&&c.o>=1&&c.o<=4;}
+function fromText(t){const m=String(t||'').match(/CARD1:([A-Za-z0-9_-]+)/)||String(t||'').match(/[#&]c=([A-Za-z0-9_-]+)/);return m?unb64(m[1]):null;}
+function personaOf(c){const A=ANCHORS[c.a],k=Math.abs(c.r|0)%A.ps.length;return {idx:k,name:A.ps[k][0],when:A.ps[k][1]};}
+function article(n){return /^[aeiou]/i.test(n)?'an':'a';}
+function motto(p){const bare=p.name.replace(/^The /,'');return "I'm "+article(bare)+' '+bare+' when '+p.when+'.';}
+
+/* ---------------- drawing the card (Option A: trading card) ---------------- */
+const W=1080,H=1350;
+let CTX=null;
+function rr(x,y,w,h,r){const g=CTX;g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath();}
+function wrap(g,text,maxW){const words=String(text).split(' '),lines=[];let cur='';
+  words.forEach(w=>{const t=cur?cur+' '+w:w;if(g.measureText(t).width>maxW&&cur){lines.push(cur);cur=w;}else cur=t;});if(cur)lines.push(cur);return lines;}
+function diamond(g,x,y,s,fill,col){g.save();g.translate(x,y);g.rotate(Math.PI/4);g.lineWidth=3;g.strokeStyle=col;if(fill){g.fillStyle=col;g.fillRect(-s/2,-s/2,s,s);}g.strokeRect(-s/2,-s/2,s,s);g.restore();}
+function emblem(g,kind,cx,cy,c,deep){
+  g.save();g.lineCap='round';g.lineJoin='round';g.strokeStyle=c;g.fillStyle=c;
+  const ring=(r,w,a)=>{g.globalAlpha=a==null?1:a;g.lineWidth=w;g.beginPath();g.arc(cx,cy,r,0,Math.PI*2);g.stroke();g.globalAlpha=1;};
+  if(kind==='compass'){g.fillStyle='#2B2456';g.beginPath();g.arc(cx,cy,120,0,7);g.fill();ring(120,6);ring(92,2,.5);
+    g.fillStyle=c;g.beginPath();g.moveTo(cx,cy-100);g.lineTo(cx+26,cy);g.lineTo(cx,cy+100);g.lineTo(cx-26,cy);g.closePath();g.fill();
+    g.fillStyle=deep;g.beginPath();g.moveTo(cx,cy);g.lineTo(cx+26,cy);g.lineTo(cx,cy+100);g.lineTo(cx-26,cy);g.closePath();g.globalAlpha=.55;g.fill();g.globalAlpha=1;
+    g.fillStyle='#15112B';g.beginPath();g.arc(cx,cy,10,0,7);g.fill();}
+  if(kind==='lantern'){g.lineWidth=6;rr(cx-70,cy-90,140,190,26);g.stroke();g.globalAlpha=.25;g.fill();g.globalAlpha=1;
+    g.beginPath();g.moveTo(cx-40,cy-90);g.lineTo(cx-40,cy-120);g.lineTo(cx+40,cy-120);g.lineTo(cx+40,cy-90);g.stroke();
+    g.beginPath();g.moveTo(cx,cy+40);g.bezierCurveTo(cx-34,cy+10,cx-14,cy-30,cx,cy-56);g.bezierCurveTo(cx+14,cy-30,cx+34,cy+10,cx,cy+40);g.fill();}
+  if(kind==='lens'){g.fillStyle='#2B2456';g.beginPath();g.arc(cx-20,cy-10,106,0,7);g.fill();g.lineWidth=10;g.beginPath();g.arc(cx-20,cy-10,106,0,7);g.stroke();
+    g.lineWidth=2;g.setLineDash([6,10]);g.beginPath();g.arc(cx-20,cy-10,72,0,7);g.stroke();g.setLineDash([]);
+    g.lineWidth=22;g.beginPath();g.moveTo(cx+56,cy+66);g.lineTo(cx+120,cy+132);g.stroke();diamond(g,cx-20,cy-10,30,true,c);}
+  if(kind==='harbour'){g.lineWidth=7;g.fillStyle='#2B2456';g.beginPath();g.moveTo(cx,cy-120);g.lineTo(cx+120,cy-20);g.lineTo(cx+120,cy+110);g.lineTo(cx-120,cy+110);g.lineTo(cx-120,cy-20);g.closePath();g.fill();g.stroke();
+    g.fillStyle=c;g.beginPath();g.moveTo(cx-40,cy+110);g.lineTo(cx-40,cy+20);g.arc(cx,cy+20,40,Math.PI,0);g.lineTo(cx+40,cy+110);g.closePath();g.fill();
+    g.lineWidth=5;g.beginPath();for(let i=-3;i<3;i++){g.moveTo(cx+i*60,cy+150);g.quadraticCurveTo(cx+i*60+30,cy+132,cx+i*60+60,cy+150);}g.stroke();}
+  if(kind==='lighthouse'){g.fillStyle='#2B2456';g.lineWidth=7;g.beginPath();g.moveTo(cx-46,cy+130);g.lineTo(cx-28,cy-60);g.lineTo(cx+28,cy-60);g.lineTo(cx+46,cy+130);g.closePath();g.fill();g.stroke();
+    g.fillStyle=c;g.fillRect(cx-34,cy-108,68,48);g.beginPath();g.moveTo(cx-44,cy-108);g.lineTo(cx,cy-140);g.lineTo(cx+44,cy-108);g.closePath();g.fill();
+    g.globalAlpha=.35;g.beginPath();g.moveTo(cx+34,cy-96);g.lineTo(cx+230,cy-150);g.lineTo(cx+230,cy-40);g.closePath();g.fill();
+    g.beginPath();g.moveTo(cx-34,cy-84);g.lineTo(cx-230,cy-140);g.lineTo(cx-230,cy-30);g.closePath();g.fill();g.globalAlpha=1;
+    g.lineWidth=5;g.beginPath();g.moveTo(cx-200,cy+146);g.quadraticCurveTo(cx,cy+120,cx+200,cy+146);g.stroke();}
+  if(kind==='ear'){g.beginPath();g.arc(cx,cy,40,0,7);g.fill();g.lineWidth=7;
+    [80,130,180].forEach((r,i)=>{g.globalAlpha=1;g.beginPath();g.arc(cx,cy,r,-Math.PI/3,Math.PI/3);g.stroke();g.globalAlpha=.4;g.beginPath();g.arc(cx,cy,r,Math.PI-Math.PI/3,Math.PI+Math.PI/3);g.stroke();});g.globalAlpha=1;}
+  if(kind==='mirror'){g.lineWidth=8;g.fillStyle='#2B2456';rr(cx-90,cy-120,180,240,90);g.fill();g.stroke();
+    g.lineWidth=9;g.beginPath();g.arc(cx,cy,52,Math.PI*0.15,Math.PI*1.05);g.stroke();g.beginPath();g.arc(cx,cy,52,Math.PI*1.15,Math.PI*2.05);g.stroke();
+    const head=(a)=>{const x=cx+52*Math.cos(a),y=cy+52*Math.sin(a);g.beginPath();g.arc(x,y,9,0,7);g.fill();};head(Math.PI*1.05);head(Math.PI*2.05);}
+  if(kind==='loop'){g.lineWidth=14;g.beginPath();g.arc(cx,cy,110,Math.PI*0.62,Math.PI*2.38);g.stroke();
+    g.beginPath();g.moveTo(cx-60,cy);g.lineTo(cx-16,cy+46);g.lineTo(cx+70,cy-52);g.stroke();
+    const a=Math.PI*0.62,x=cx+110*Math.cos(a),y=cy+110*Math.sin(a);g.beginPath();g.moveTo(x-30,y+4);g.lineTo(x+8,y-26);g.lineTo(x+14,y+22);g.closePath();g.fill();}
+  g.restore();}
+
+function draw(cv,c,showName,name){
+  const g=cv.getContext('2d');CTX=g;const A=ANCHORS[c.a],P=PILLARS[A.p],col=A.c,p=personaOf(c);
+  g.clearRect(0,0,W,H);g.fillStyle='#0E0B1F';g.fillRect(0,0,W,H);
+  g.fillStyle=col;rr(40,40,W-80,H-80,44);g.fill();
+  g.fillStyle='#15112B';rr(52,52,W-104,H-104,36);g.fill();
+  const L=96,R=W-96,CW=R-L;let y=112;
+  /* top line: name (if on) and pillar */
+  g.textBaseline='alphabetic';g.font='700 26px "Instrument Sans",sans-serif';g.fillStyle=col;
+  g.fillText(P.name.toUpperCase(),L,y);
+  if(showName&&name){g.textAlign='right';g.fillStyle='#F3F0FF';g.fillText(name,R-190,y);g.textAlign='left';}
+  /* band badge */
+  const bx=R-160,by=74;g.strokeStyle=col;g.lineWidth=3;rr(bx,by,160,128,22);g.stroke();
+  g.textAlign='center';g.font='600 22px "Instrument Sans",sans-serif';g.fillStyle='#A79EC9';g.fillText('Band',bx+80,by+34);
+  g.font='700 40px Fraunces,Georgia,serif';g.fillStyle=col;g.fillText(P.bands[c.o-1],bx+80,by+80);
+  g.font='600 22px "Instrument Sans",sans-serif';g.fillStyle='#A79EC9';g.fillText(c.o+' of 4',bx+80,by+112);g.textAlign='left';
+  /* persona name */
+  g.fillStyle='#F3F0FF';g.font='700 66px Fraunces,Georgia,serif';
+  const nl=wrap(g,p.name,CW-190).slice(0,2);y=192;nl.forEach(l=>{g.fillText(l,L,y);y+=72;});
+  y=Math.max(y-72+52,262);
+  /* measure what sits under the art, so the art takes whatever height is left */
+  g.font='700 22px "Instrument Sans",sans-serif';const tag0=g.measureText('ANCHOR '+c.a).width+30;
+  g.font='600 29px "Instrument Sans",sans-serif';const al0=wrap(g,A.name,CW-tag0-18);
+  g.font='400 28px "Instrument Sans",sans-serif';const il0=wrap(g,'You showed '+SIGNS[c.o-1]+' of '+A.of+'.',CW);
+  g.font='italic 500 32px Fraunces,Georgia,serif';const ml0=wrap(g,'\u201C'+motto(p)+'\u201D',CW-40).slice(0,3);
+  const rows=c.b.filter(Boolean).length;
+  const under=56+6+(al0[1]?36:0)+48+il0.length*38+6+rows*62+40+ml0.length*42;
+  const ah=Math.max(320,Math.min(560,(H-92-36-44)-y-under));
+  g.fillStyle='#F3F0FF';
+  /* art panel with the Puppeteer strings */
+  const ax=L,ay=y,aw=CW;g.save();rr(ax,ay,aw,ah,24);g.fillStyle=A.deep;g.fill();g.clip();
+  g.fillStyle='rgba(185,174,232,.35)';for(let i=0;i<60;i++){g.beginPath();g.arc(ax+(i*197+37)%aw,ay+(i*113+19)%ah,2.2,0,7);g.fill();}
+  const mx=ax+aw/2,ey=ay+42+(ah-42)/2+14;g.strokeStyle=col;g.lineWidth=8;g.lineCap='round';g.beginPath();g.moveTo(mx-300,ay+42);g.lineTo(mx+300,ay+42);g.stroke();
+  g.strokeStyle='rgba(185,174,232,.7)';g.lineWidth=2.5;[-250,0,250].forEach(dx=>{g.beginPath();g.moveTo(mx+dx,ay+42);g.lineTo(mx+dx,dx?ey-30:ey-130);g.stroke();});
+  diamond(g,mx-250,ey-20,22,true,col);diamond(g,mx+250,ey-20,22,true,col);
+  emblem(g,A.emb,mx,ey,col,A.deep);g.restore();
+  g.strokeStyle='rgba(243,240,255,.16)';g.lineWidth=2;rr(ax,ay,aw,ah,24);g.stroke();
+  y=ay+ah+56;
+  /* anchor */
+  g.font='700 22px "Instrument Sans",sans-serif';const tag='ANCHOR '+c.a,tw=g.measureText(tag).width+30;
+  g.fillStyle=col;rr(L,y-30,tw,40,20);g.fill();g.fillStyle='#15112B';g.fillText(tag,L+15,y-3);
+  g.fillStyle='#F3F0FF';g.font='600 29px "Instrument Sans",sans-serif';
+  const al=wrap(g,A.name,CW-tw-18);g.fillText(al[0],L+tw+18,y);y+=6;if(al[1]){y+=36;g.fillText(al.slice(1).join(' '),L+tw+18,y);}
+  /* indicative line */
+  y+=48;g.font='400 28px "Instrument Sans",sans-serif';g.fillStyle='#DCD6F5';
+  wrap(g,'You showed '+SIGNS[c.o-1]+' of '+A.of+'.',CW).forEach(l=>{g.fillText(l,L,y);y+=38;});
+  /* stat rows */
+  y+=6;STATS.forEach((s,i)=>{const b=c.b[i];if(!b)return;
+    g.strokeStyle='rgba(243,240,255,.14)';g.lineWidth=2;g.beginPath();g.moveTo(L,y);g.lineTo(R,y);g.stroke();
+    g.font='700 26px "Instrument Sans",sans-serif';g.fillStyle='#A79EC9';g.fillText(s,L,y+42);
+    for(let k=0;k<4;k++)diamond(g,L+226+k*42,y+33,20,k<b,col);
+    g.textAlign='right';g.font='400 26px "Instrument Sans",sans-serif';g.fillStyle='#F3F0FF';g.fillText(WORDS[b-1],R,y+42);g.textAlign='left';y+=62;});
+  /* motto */
+  y+=40;g.textAlign='center';g.font='italic 500 32px Fraunces,Georgia,serif';g.fillStyle=col;
+  wrap(g,'“'+motto(p)+'”',CW-40).slice(0,3).forEach(l=>{g.fillText(l,W/2,y);y+=42;});g.textAlign='left';
+  /* footer */
+  const fy=H-92;g.strokeStyle='rgba(243,240,255,.14)';g.beginPath();g.moveTo(L,fy-36);g.lineTo(R,fy-36);g.stroke();
+  g.font='400 23px "Instrument Sans",sans-serif';g.fillStyle='#A79EC9';
+  g.fillText(cutTo(g,'From: '+(c.t||c.s),CW*.58),L,fy);
+  g.textAlign='right';g.fillText('No. '+c.a+'-'+String(p.idx+1).padStart(2,'0')+' of '+TOTAL+' · Swanubhava™',R,fy);g.textAlign='left';
+  cv.setAttribute('aria-label',(showName&&name?name+' - ':'')+p.name+', '+P.bands[c.o-1]+' band. '+A.name+'. '+motto(p));
+}
+function cutTo(g,t,w){if(g.measureText(t).width<=w)return t;while(t.length>4&&g.measureText(t+'...').width>w)t=t.slice(0,-1);return t+'...';}
+
+function blank(cv){const g=cv.getContext('2d');CTX=g;g.fillStyle='#15112B';g.fillRect(0,0,W,H);g.strokeStyle='#5B2A7A';g.lineWidth=4;g.setLineDash([18,14]);rr(60,60,W-120,H-120,40);g.stroke();g.setLineDash([]);
+  g.fillStyle='#BDB2CC';g.textAlign='center';g.font='600 40px Fraunces,Georgia,serif';g.fillText('Your card goes here',W/2,H/2);g.textAlign='left';}
+return {PILLARS:PILLARS,ANCHORS:ANCHORS,TOTAL:TOTAL,STATS:STATS,SIGNS:SIGNS,WORDS:WORDS,unb64:unb64,valid:valid,fromText:fromText,personaOf:personaOf,motto:motto,draw:draw,blank:blank,W:W,H:H};
+})();
+/* ==== END PERSONA CORE ==== */
+const {PILLARS,ANCHORS,TOTAL,STATS,SIGNS,WORDS,unb64,valid,fromText,personaOf,motto,draw,W,H}=PERSONA;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+function article(n){return /^[aeiou]/i.test(n)?'an':'a';}
+
+/* ---------------- page state ---------------- */
+let CUR=null;
+const KEY='swanubhava-cards';
+function coll(){try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(x){return [];}}
+function keep(c){try{const L=coll(),p=personaOf(c),id=c.a+'-'+p.idx;if(!L.some(x=>x.id===id)){L.push({id,a:c.a,i:p.idx,o:c.o,t:c.t,d:c.d});localStorage.setItem(KEY,JSON.stringify(L));}}catch(x){}}
+function shareText(){const A=ANCHORS[CUR.a],p=personaOf(CUR),P=PILLARS[A.p];
+  return motto(p)+'\n\nMy Swanubhava™ persona card from ‘'+(CUR.t||CUR.s)+'’: '+p.name+' - '+P.bands[CUR.o-1]+' band, '+A.name.toLowerCase()+'.\n\n'+
+    'Swanubhava is a set of short scenarios about the human side of product work - the decisions that go wrong in the room, under pressure. Try one and see which persona you get:\nhttps://gsj24983.github.io/swanubhava-play/\n\n#Swanubhava #ProductManagement';}
+function render(first){const c=CUR,A=ANCHORS[c.a],p=personaOf(c),P=PILLARS[A.p];
+  document.documentElement.style.setProperty('--anchor',A.c);
+  draw($('card'),c,$('showName').checked,$('nameIn').value.trim());
+  if(first){const cv=$('card');cv.classList.remove('deal');void cv.offsetWidth;cv.classList.add('deal');}
+  $('heroTitle').textContent=p.name;$('heroSub').textContent='From ‘'+(c.t||c.s)+'’. '+motto(p);
+  $('meanTitle').textContent='Anchor '+c.a+': '+A.name;$('meanText').textContent=A.means;
+  $('bandText').textContent=P.name+' bands run '+P.bands.join(', ')+'. Yours this time: '+P.bands[c.o-1]+' - '+WORDS[c.o-1].toLowerCase()+'.';
+  if(first)$('shareText').value=shareText();
+  ['ctlBox','meanBox','trainerNote'].forEach(id=>$(id).classList.remove('hidden'));$('pasteBox').classList.add('hidden');
+  drawColl();}
+function drawColl(){const L=coll();$('collBox').classList.toggle('hidden',!L.length);
+  $('collTitle').textContent='Your collection - '+L.length+' of '+TOTAL+' personas';
+  $('coll').innerHTML=L.map(x=>{const A=ANCHORS[x.a];if(!A)return '';const nm=A.ps[x.i]?A.ps[x.i][0]:'';
+    return '<div class="tile" style="--c:'+A.c+'"><b>'+esc(nm)+'</b><span>Anchor '+x.a+' &middot; '+esc(PILLARS[A.p].bands[(x.o||1)-1])+'</span></div>';}).join('');}
+function open(c){if(!valid(c)){return false;}CUR=c;$('nameIn').value=c.n||'';$('showName').checked=!!c.n;keep(c);render(true);return true;}
+function blank(){PERSONA.blank($('card'));
+  $('pasteBox').classList.remove('hidden');drawColl();}
+function png(){return new Promise(res=>$('card').toBlob(res,'image/png'));}
+function fileName(){const p=personaOf(CUR);return 'swanubhava-'+p.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')+'.png';}
+function say(m){$('shareMsg').textContent=m;}
+function copy(t){return navigator.clipboard?navigator.clipboard.writeText(t).then(()=>true,()=>false):Promise.resolve(false);}
+
+/* ---------------- wiring ---------------- */
+$('showName').addEventListener('change',()=>{if(CUR)render(false);});
+$('nameIn').addEventListener('input',()=>{if(CUR){if($('nameIn').value.trim())$('showName').checked=true;render(false);}});
+$('pasteGo').addEventListener('click',()=>{const c=fromText($('pasteIn').value);
+  if(open(c)){$('pasteMsg').textContent='';history.replaceState(null,'',location.pathname);window.scrollTo({top:0,behavior:'smooth'});}
+  else $('pasteMsg').textContent=/PUP2:/.test($('pasteIn').value)?'That result is from an older version of the scenario, which did not make cards yet. Play it again from the scenarios page to get your card.':'No card code found in that text. Paste the whole result you copied from the last screen.';});
+$('dlBtn').addEventListener('click',async()=>{try{const b=await png(),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=fileName();document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1500);say('Card downloaded.');}catch(x){say('Could not download here. Press and hold the card to save it instead.');}});
+$('copyBtn').addEventListener('click',async()=>{say(await copy($('shareText').value)?'Text copied.':'Select the text above and copy it.');});
+$('liBtn').addEventListener('click',async()=>{const t=$('shareText').value;await copy(t);
+  window.open('https://www.linkedin.com/feed/?shareActive=true&text='+encodeURIComponent(t),'_blank','noopener');
+  say('LinkedIn opened with your text (also copied). Add the card you downloaded with the picture button.');});
+(async()=>{try{const f=new File([await png()],'card.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[f]}))$('shareBtn').classList.remove('hidden');}catch(x){}})();
+$('shareBtn').addEventListener('click',async()=>{try{const f=new File([await png()],fileName(),{type:'image/png'});
+  await navigator.share({files:[f],text:$('shareText').value,title:personaOf(CUR).name});say('Shared.');}catch(x){if(x&&x.name!=='AbortError')say('Sharing did not work here. Download the card instead.');}});
+$('clearColl').addEventListener('click',()=>{try{localStorage.removeItem(KEY);}catch(x){}drawColl();});
+
+/* fonts first, so the canvas draws in Fraunces and Instrument Sans */
+Promise.all(['700 66px Fraunces','italic 500 32px Fraunces','400 28px "Instrument Sans"','700 26px "Instrument Sans"','600 22px "Instrument Sans"'].map(f=>document.fonts.load(f))).catch(()=>{}).then(()=>{
+  const c=fromText(location.hash);if(!open(c))blank();});
+window.addEventListener('hashchange',()=>{const c=fromText(location.hash);if(c)open(c);});
+}
+</script>
+</body></html>
