@@ -250,19 +250,28 @@ function draw(cv,c,showName,name){
   g.fillStyle=col;rr(40,40,W-80,H-80,44);g.fill();
   g.fillStyle='#15112B';rr(52,52,W-104,H-104,36);g.fill();
   const L=96,R=W-96,CW=R-L;let y=112;
-  /* top line: name (if on) and pillar */
-  g.textBaseline='alphabetic';g.font='700 26px "Instrument Sans",sans-serif';g.fillStyle=col;
-  g.fillText(P.name.toUpperCase(),L,y);
-  if(showName&&name){g.textAlign='right';g.fillStyle='#F3F0FF';g.fillText(name,R-190,y);g.textAlign='left';}
-  /* band badge */
-  const bx=R-160,by=74;g.strokeStyle=col;g.lineWidth=3;rr(bx,by,160,128,22);g.stroke();
-  g.textAlign='center';g.font='600 22px "Instrument Sans",sans-serif';g.fillStyle='#A79EC9';g.fillText('Band',bx+80,by+34);
-  g.font='700 40px Fraunces,Georgia,serif';g.fillStyle=col;g.fillText(P.bands[c.o-1],bx+80,by+80);
-  g.font='600 22px "Instrument Sans",sans-serif';g.fillStyle='#A79EC9';g.fillText(c.o+' of 4',bx+80,by+112);g.textAlign='left';
+  /* top: the learner's name (if on), large, then the pillar */
+  g.textBaseline='alphabetic';
+  if(showName&&name){g.font='600 50px Fraunces,Georgia,serif';g.fillStyle='#F3F0FF';g.fillText(cutTo(g,name,CW),L,y+10);y+=58;}
+  g.font='700 26px "Instrument Sans",sans-serif';g.fillStyle=col;g.fillText(P.name.toUpperCase(),L,y);
+  /* band strip: all four bands in order, the one this run reached lit up, the rest dimmed - so the word explains itself */
+  const gap=14,bw=246,iw=(CW-bw-3*gap)/3,ah2=124,ih=96,rowTop=y+26,mid=rowTop+ah2/2;let bx=L;
+  for(let k=1;k<=4;k++){const on=k===c.o,w=on?bw:iw,h=on?ah2:ih,ty=mid-h/2;
+    g.save();
+    if(on){g.shadowColor=col;g.shadowBlur=26;g.fillStyle='#120E26';rr(bx,ty,w,h,22);g.fill();g.shadowBlur=0;g.strokeStyle=col;g.lineWidth=5;rr(bx,ty,w,h,22);g.stroke();}
+    else{g.globalAlpha=.55;g.fillStyle='#211B3D';rr(bx,ty,w,h,18);g.fill();g.strokeStyle='#5A4D86';g.lineWidth=2.5;rr(bx,ty,w,h,18);g.stroke();}
+    g.textAlign='center';const cx=bx+w/2;
+    if(on){g.font='600 20px "Instrument Sans",sans-serif';g.fillStyle='#CFC6F2';g.fillText('Your band',cx,ty+32);
+      g.font='700 44px Fraunces,Georgia,serif';g.fillStyle=col;g.fillText(P.bands[k-1],cx,ty+80);
+      g.font='600 20px "Instrument Sans",sans-serif';g.fillStyle='#CFC6F2';g.fillText(k+' of 4',cx,ty+108);}
+    else{g.font='700 30px Fraunces,Georgia,serif';g.fillStyle='#B9AEE8';g.fillText(P.bands[k-1],cx,ty+48);
+      g.font='600 18px "Instrument Sans",sans-serif';g.fillStyle='#A79EC9';g.fillText(k+' of 4',cx,ty+76);}
+    g.restore();bx+=w+gap;}
+  g.textAlign='left';y=rowTop+ah2+70;
   /* persona name */
   g.fillStyle='#F3F0FF';g.font='700 66px Fraunces,Georgia,serif';
-  const nl=wrap(g,p.name,CW-190).slice(0,2);y=192;nl.forEach(l=>{g.fillText(l,L,y);y+=72;});
-  y=Math.max(y-72+52,262);
+  const nl=wrap(g,p.name,CW).slice(0,2);nl.forEach(l=>{g.fillText(l,L,y);y+=72;});
+  y=y-72+46;
   /* measure what sits under the art, so the art takes whatever height is left */
   g.font='700 22px "Instrument Sans",sans-serif';const tag0=g.measureText('ANCHOR '+c.a).width+30;
   g.font='600 29px "Instrument Sans",sans-serif';const al0=wrap(g,A.name,CW-tag0-18);
