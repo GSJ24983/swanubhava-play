@@ -93,7 +93,7 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
     <div class="row">
       <button class="btn go hidden" id="shareBtn" type="button">Share</button>
       <button class="btn go" id="dlBtn" type="button">Download card</button>
-      <button class="btn" id="liBtn" type="button">Open LinkedIn</button>
+      <a class="btn" id="liBtn" href="https://www.linkedin.com/feed/" target="_blank" rel="noopener">Open LinkedIn</a>
       <button class="btn" id="copyBtn" type="button">Copy text</button>
     </div>
     <label class="small" for="shareText" style="display:block;margin-top:12px">Text to post (edit it as you like)</label>
@@ -332,7 +332,7 @@ function render(first){const c=CUR,A=ANCHORS[c.a],p=personaOf(c),P=PILLARS[A.p];
   $('heroTitle').textContent=p.name;$('heroSub').textContent='From ‘'+(c.t||c.s)+'’. '+motto(p);
   $('meanTitle').textContent='Anchor '+c.a+': '+A.name;$('meanText').textContent=A.means;
   $('bandText').textContent=P.name+' bands run '+P.bands.join(', ')+'. Yours this time: '+P.bands[c.o-1]+' - '+WORDS[c.o-1].toLowerCase()+'.';
-  if(first)$('shareText').value=shareText();
+  if(first){$('shareText').value=shareText();liHref();}
   ['ctlBox','meanBox','trainerNote'].forEach(id=>$(id).classList.remove('hidden'));$('pasteBox').classList.add('hidden');
   drawColl();}
 function drawColl(){const L=coll();$('collBox').classList.toggle('hidden',!L.length);
@@ -355,9 +355,10 @@ $('pasteGo').addEventListener('click',()=>{const c=fromText($('pasteIn').value);
   else $('pasteMsg').textContent=/PUP2:/.test($('pasteIn').value)?'That result is from an older version of the scenario, which did not make cards yet. Play it again from the scenarios page to get your card.':'No card code found in that text. Paste the whole result you copied from the last screen.';});
 $('dlBtn').addEventListener('click',async()=>{try{const b=await png(),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=fileName();document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1500);say('Card downloaded.');}catch(x){say('Could not download here. Press and hold the card to save it instead.');}});
 $('copyBtn').addEventListener('click',async()=>{say(await copy($('shareText').value)?'Text copied.':'Select the text above and copy it.');});
-$('liBtn').addEventListener('click',async()=>{const t=$('shareText').value;await copy(t);
-  window.open('https://www.linkedin.com/feed/?shareActive=true&text='+encodeURIComponent(t),'_blank','noopener');
-  say('LinkedIn opened with your text (also copied). Add the card you downloaded with the picture button.');});
+/* a plain link opens LinkedIn on the click itself, so no pop-up blocker stops it; the text is copied too, in case LinkedIn does not fill it in */
+function liHref(){$('liBtn').href='https://www.linkedin.com/feed/?shareActive=true&text='+encodeURIComponent($('shareText').value);}
+$('shareText').addEventListener('input',liHref);
+$('liBtn').addEventListener('click',()=>{liHref();copy($('shareText').value);say('LinkedIn opened in a new tab with your text (also copied - paste it if the box is empty). Add the card you downloaded with the picture button.');});
 (async()=>{try{const f=new File([await png()],'card.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[f]}))$('shareBtn').classList.remove('hidden');}catch(x){}})();
 $('shareBtn').addEventListener('click',async()=>{try{const f=new File([await png()],fileName(),{type:'image/png'});
   await navigator.share({files:[f],text:$('shareText').value,title:personaOf(CUR).name});say('Shared.');}catch(x){if(x&&x.name!=='AbortError')say('Sharing did not work here. Download the card instead.');}});
